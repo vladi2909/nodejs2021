@@ -11,4 +11,6 @@ const get = async id => {
   return task;
 };
 
-module.exports = { getAllByBoard, get };
+const create = async task => DB.createTask(task);
+
+module.exports = { getAllByBoard, get, create };

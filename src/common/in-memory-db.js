@@ -91,6 +91,11 @@ const getAllTasksByBoard = async () => DB.tasks.slice(0);
 
 const getTask = async id => DB.tasks.filter(item => item.id === id)[0];
 
+const createTask = async task => {
+  DB.tasks.push(task);
+  return task;
+};
+
 module.exports = {
   getAllUsers,
   getUser,
@@ -103,5 +108,6 @@ module.exports = {
   delBoard,
   updateBoard,
   getAllTasksByBoard,
-  getTask
+  getTask,
+  createTask
 };

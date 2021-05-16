@@ -4,4 +4,6 @@ const getAllByBoard = () => tasksRepo.getAllByBoard();
 
 const get = id => tasksRepo.get(id);
 
-module.exports = { getAllByBoard, get };
+const create = task => tasksRepo.create(task);
+
+module.exports = { getAllByBoard, get, create };

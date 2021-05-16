@@ -16,4 +16,23 @@ router.route('/:id').get(async (req, res) => {
   }
 });
 
+router.route('/').post(async (req, res) => {
+  const task = await tasksService.create(
+    new Task({
+      title: req.body.title,
+      order: req.body.order,
+      description: req.body.description,
+      userId: req.body.userId,
+      boardId: req.baseUrl.split('/')[2],
+      columnId: req.body.columnId,
+    })
+  );
+
+  try {
+    res.status(201).json(Task.toResponse(task));
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
+
 module.exports = router;
