@@ -117,7 +117,7 @@ const delTask = async id => {
     return false;
   }
 
-  Database.boards = Database.boards.filter(board => board.id !== deletion.id);
+  Database.tasks = Database.tasks.filter(task => task.id !== deletion.id);
   return deletion;
 };
 
