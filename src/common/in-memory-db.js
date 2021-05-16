@@ -48,8 +48,6 @@ const updateUser = async (id, modUser) => {
   return modUser;
 };
 
-Database.boards.push(new Board(), new Board());
-
 const getAllBoards = async () => Database.boards.slice(0);
 
 const getBoard = async id => Database.boards.filter(item => item.id === id)[0];
@@ -86,7 +84,6 @@ const updateBoard = async (id, modBoard) => {
   return modBoard;
 };
 
-Database.tasks.push(new Task(), new Task());
 
 const getAllTasksByBoard = async () => Database.tasks.slice(0);
 

@@ -2,7 +2,7 @@ const DB = require('../../common/in-memory-db');
 
 const getAll = async () => DB.getAllBoards();
 
-const get = async (id) => {
+const get = async id => {
   const board = await DB.getBoard(id);
 
   if (!board) {
@@ -12,10 +12,10 @@ const get = async (id) => {
   return board;
 };
 
-const create = async (board) => DB.createBoard(board);
+const create = async board => DB.createBoard(board);
 
-const delById = async (id) => {
-  const board = await DB.deleteBoard(id);
+const delById = async id => {
+  const board = await DB.delBoard(id);
   DB.delTasksByBoard(id);
   if (!board) {
     throw new Error(`The board with id: ${id} has not been found`);

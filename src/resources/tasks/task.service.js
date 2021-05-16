@@ -6,7 +6,7 @@ const get = id => tasksRepo.get(id);
 
 const create = task => tasksRepo.create(task);
 
-const delById = id => tasksRepo.deleteById(id);
+const delById = id => tasksRepo.delById(id);
 
 const update = (id, modTask) => tasksRepo.update(id, modTask);
 

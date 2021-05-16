@@ -6,9 +6,9 @@ class Task {
     title = 'TEST(Task title)',
     order = 0,
     description = 'TEST(Task description)',
-    userId = 'TEST_12',
-    boardId = 'TEST_12',
-    columnId = 'TEST_12',
+    userId = 'TEST(Task userId)',
+    boardId = 'TEST(Task userId)',
+    columnId = 'TEST(Task userId)',
   } = {}) {
     this.id = id;
     this.title = title;

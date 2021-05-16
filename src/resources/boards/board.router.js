@@ -32,7 +32,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    const board = await boardsService.deleteById(req.params.id);
+    const board = await boardsService.delById(req.params.id);
     res.status(200).json(Board.toResponse(board));
   } catch (error) {
     res.status(404).send(error.message);

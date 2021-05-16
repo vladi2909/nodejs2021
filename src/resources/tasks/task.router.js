@@ -37,7 +37,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    const task = await tasksService.deleteById(req.params.id);
+    const task = await tasksService.delById(req.params.id);
     res.status(200).json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);
