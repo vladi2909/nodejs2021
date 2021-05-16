@@ -24,4 +24,13 @@ const delById = async id => {
   return user;
 };
 
-module.exports = { getAll, get, create, deleteById };
+const update = async (id, modUser) => {
+  const user = await DB.updateUser(id, modUser);
+  if (!user) {
+    throw new Error(`The user with id: ${id} has not been found`);
+  }
+
+  return user;
+};
+
+module.exports = { getAll, get, create, delById, update };

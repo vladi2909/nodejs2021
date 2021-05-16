@@ -8,11 +8,12 @@ const Database = {
 
 Database.users.push(new User(), new User());
 
-const getAllUsers = async () => [...Database.users];
+const getAllUsers = async () => Database.users.slice(0);
 
-const getUser = async id => Database.users.filter(item => item.id === id)[0];
+const getUser = async (id) =>
+  Database.users.filter((item) => item.id === id)[0];
 
-const createUser = async user => {
+const createUser = async (user) => {
   Database.users.push(user);
   return user;
 };
@@ -27,4 +28,21 @@ const delUser = async id => {
   return deletion;
 };
 
-module.exports = { getAllUsers, getUser, createUser, delUser };
+const updateUser = async (id, modUser) => {
+  const user = Database.users.filter(item => item.id === id)[0];
+  if (!user) {
+    return false;
+  }
+
+  Database.users = Database.users.map(item => {
+    if (item.id === id) {
+      return modUser;
+    }
+
+    return item;
+  });
+
+  return modUser;
+};
+
+module.exports = { getAllUsers, getUser, createUser, delUser, updateUser };
