@@ -39,4 +39,18 @@ router.route('/:id').delete(async (req, res) => {
   }
 });
 
+router.route('/:id').put(async (req, res) => {
+    try {
+      const modBoard = {
+        id: req.params.id,
+        title: req.body.title,
+        columns: req.body.columns,
+      };
+      const board = await boardsService.update(req.params.id, modBoard);
+      res.json(Board.toResponse(board));
+    } catch (error) {
+      res.status(404).send(error.message);
+    }
+  });
+
 module.exports = router;

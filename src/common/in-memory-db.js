@@ -11,10 +11,10 @@ Database.users.push(new User(), new User());
 
 const getAllUsers = async () => Database.users.slice(0);
 
-const getUser = async (id) =>
-  Database.users.filter((item) => item.id === id)[0];
+const getUser = async id =>
+  Database.users.filter(item => item.id === id)[0];
 
-const createUser = async (user) => {
+const createUser = async user => {
   Database.users.push(user);
   return user;
 };
@@ -66,6 +66,23 @@ const delBoard = async id => {
   return deletion;
 };
 
+const updateBoard = async (id, modBoard) => {
+    const board = Database.boards.filter(item => item.id === id)[0];
+    if (!board) {
+      return false;
+    }
+
+    Database.boards = Database.boards.map(item => {
+      if (item.id === id) {
+        return modBoard;
+      }
+
+      return el;
+    });
+
+    return modBoard;
+  };
+
 module.exports = {
   getAllUsers,
   getUser,
@@ -76,4 +93,5 @@ module.exports = {
   getBoard,
   createBoard,
   delBoard,
+  updateBoard
 };
