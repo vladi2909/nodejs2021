@@ -85,15 +85,53 @@ const updateBoard = async (id, modBoard) => {
   return modBoard;
 };
 
-DB.tasks.push(new Task(), new Task());
+Database.tasks.push(new Task(), new Task());
 
-const getAllTasksByBoard = async () => DB.tasks.slice(0);
+const getAllTasksByBoard = async () => Database.tasks.slice(0);
 
-const getTask = async id => DB.tasks.filter(item => item.id === id)[0];
+const getTask = async id => Database.tasks.filter(item => item.id === id)[0];
 
 const createTask = async task => {
-  DB.tasks.push(task);
+  Database.tasks.push(task);
   return task;
+};
+
+const updateTask = async (id, modTask) => {
+  const task = Database.tasks.filter(item => item.id === id)[0];
+  if (!task) {
+    return false;
+  }
+
+  Database.tasks = Database.tasks.map(item => {
+    if (item.id === id) {
+      return modTask;
+    }
+
+    return item;
+  });
+
+  return modTask;
+};
+
+const delTask = async id => {
+  const deletion = Database.tasks.filter(item => item.id === id)[0];
+  if (!deletion) {
+    return false;
+  }
+
+  Database.boards = Database.boards.filter(board => board.id !== deletion.id);
+  return deletion;
+};
+
+const delTasksUserId = async userId => {
+    Database.tasks = Database.tasks.map(item =>
+    item.userId === userId ? { ...item, userId: null } : { ...item }
+  );
+};
+
+const delTasksByBoard = async boardId => {
+  Database.tasks = Database.tasks.filter(item => item.boardId !== boardId);
+  return Database.tasks;
 };
 
 module.exports = {
@@ -109,5 +147,9 @@ module.exports = {
   updateBoard,
   getAllTasksByBoard,
   getTask,
-  createTask
+  createTask,
+  delTask,
+  updateTask,
+  delTasksUserId,
+  delTasksByBoard,
 };
