@@ -16,6 +16,7 @@ const create = async user => DB.createUser(user);
 
 const delById = async id => {
   const user = await DB.delUser(id);
+  DB.delTasksUserId(id);
 
   if (!user) {
     throw new Error(`The user with id: ${id} has not been found`);

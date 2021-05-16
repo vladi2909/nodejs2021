@@ -16,9 +16,9 @@ const create = async (board) => DB.createBoard(board);
 
 const delById = async (id) => {
   const board = await DB.deleteBoard(id);
-
+  DB.delTasksByBoard(id);
   if (!board) {
-    throw new Error(`The user with id: ${id} has not been found`);
+    throw new Error(`The board with id: ${id} has not been found`);
   }
 
   return board;
