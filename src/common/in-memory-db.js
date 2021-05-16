@@ -1,4 +1,5 @@
 const User = require('../resources/users/user.model');
+const Board = require('../resources/boards/board.model');
 
 const Database = {
   users: [],
@@ -43,6 +44,19 @@ const updateUser = async (id, modUser) => {
   });
 
   return modUser;
+};
+
+Database.boards.push(new Board(), new Board());
+
+const getAllBoards = async () => Database.boards.slice(0);
+
+module.exports = {
+  getAllUsers,
+  getUser,
+  createUser,
+  delUser,
+  updateUser,
+  getAllBoards,
 };
 
 module.exports = { getAllUsers, getUser, createUser, delUser, updateUser };
