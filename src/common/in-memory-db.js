@@ -9,34 +9,35 @@ const Database = {
 };
 
 Database.users.push(new User(), new User());
+Database.boards.push(new Board(), new Board());
+Database.tasks.push(new Task(), new Task());
 
 const getAllUsers = async () => Database.users.slice(0);
 
-const getUser = async (id) =>
-  Database.users.filter((item) => item.id === id)[0];
+const getUser = async id => Database.users.filter(item => item.id === id)[0];
 
-const createUser = async (user) => {
+const createUser = async user => {
   Database.users.push(user);
   return user;
 };
 
-const delUser = async (id) => {
-  const deletion = Database.users.filter((item) => item.id === id)[0];
+const delUser = async id => {
+  const deletion = Database.users.filter(item => item.id === id)[0];
   if (!deletion) {
     return false;
   }
 
-  Database.users = Database.users.filter((user) => user.id !== deletion.id);
+  Database.users = Database.users.filter(user => user.id !== deletion.id);
   return deletion;
 };
 
 const updateUser = async (id, modUser) => {
-  const user = Database.users.filter((item) => item.id === id)[0];
+  const user = Database.users.filter(item => item.id === id)[0];
   if (!user) {
     return false;
   }
 
-  Database.users = Database.users.map((item) => {
+  Database.users = Database.users.map(item => {
     if (item.id === id) {
       return modUser;
     }
@@ -51,30 +52,30 @@ Database.boards.push(new Board(), new Board());
 
 const getAllBoards = async () => Database.boards.slice(0);
 
-const getBoard = async (id) =>
-  Database.boards.filter((item) => item.id === id)[0];
+const getBoard = async id => Database.boards.filter(item => item.id === id)[0];
 
-const createBoard = async (board) => {
+const createBoard = async board => {
   Database.boards.push(board);
   return board;
 };
 
-const delBoard = async (id) => {
-  const deletion = Database.boards.filter((item) => item.id === id)[0];
+const delBoard = async id => {
+  const deletion = Database.boards.filter(item => item.id === id)[0];
   if (!deletion) {
     return false;
   }
-  Database.boards = Database.boards.filter((board) => board.id !== deletion.id);
+
+  Database.boards = Database.boards.filter(board => board.id !== deletion.id);
   return deletion;
 };
 
 const updateBoard = async (id, modBoard) => {
-  const board = Database.boards.filter((item) => item.id === id)[0];
+  const board = Database.boards.filter(item => item.id === id)[0];
   if (!board) {
     return false;
   }
 
-  Database.boards = Database.boards.map((item) => {
+  Database.boards = Database.boards.map(item => {
     if (item.id === id) {
       return modBoard;
     }
