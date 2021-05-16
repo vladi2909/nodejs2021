@@ -8,8 +8,8 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/:id').get(async (req, res) => {
-  const user = await usersService.get(req.params.id);
   try {
+    const user = await usersService.get(req.params.id);
     res.status(200).json(User.toResponse(user));
   } catch (error) {
     res.status(404).send(error.message);
@@ -33,7 +33,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    const user = await usersService.deleteById(req.params.id);
+    const user = await usersService.delById(req.params.id);
     res.json(User.toResponse(user));
   } catch (error) {
     res.status(404).send(error.message);
@@ -47,9 +47,9 @@ router.route('/:id').put(async (req, res) => {
     login: req.body.login,
     password: req.body.password,
   };
-  const user = await usersService.update(req.params.id, modifiedUser);
-  
+
   try {
+    const user = await usersService.update(req.params.id, modUser);
     res.json(User.toResponse(user));
   } catch (error) {
     res.status(404).send(error.message);

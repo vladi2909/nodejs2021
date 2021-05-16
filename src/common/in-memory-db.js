@@ -50,6 +50,22 @@ Database.boards.push(new Board(), new Board());
 
 const getAllBoards = async () => Database.boards.slice(0);
 
+const getBoard = async id => Database.boards.filter(item => item.id === id)[0];
+
+const createBoard = async board => {
+  Database.boards.push(board);
+  return board;
+};
+
+const delBoard = async id => {
+  const deletion = Database.boards.filter(item => item.id === id)[0];
+  if (!deletion) {
+    return false;
+  }
+  Database.boards = Database.boards.filter(board => board.id !== deletion.id);
+  return deletion;
+};
+
 module.exports = {
   getAllUsers,
   getUser,
@@ -57,6 +73,7 @@ module.exports = {
   delUser,
   updateUser,
   getAllBoards,
+  getBoard,
+  createBoard,
+  delBoard,
 };
-
-module.exports = { getAllUsers, getUser, createUser, delUser, updateUser };
