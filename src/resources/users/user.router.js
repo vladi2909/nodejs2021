@@ -24,4 +24,13 @@ router.route('/').post(async (req, res) => {
   res.status(user ? 201 : 400).json(User.toResponse(user));
 });
 
+router.route('/:id').delete(async (req, res) => {
+  try {
+    const user = await usersService.deleteById(req.params.id);
+    res.json(User.toResponse(user));
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
+
 module.exports = router;

@@ -1,14 +1,27 @@
 const DB = require('../../common/in-memory-db');
 
-const getAll = async () =>
-// TODO: mock implementation. should be replaced during task development
-  DB;
+const getAll = async () => DB.getAllUsers();
 
-const get = id => DB.filter((item) => item.id === id)[0];
+const get = async id => {
+  const user = DB.getUser(id);
 
-const create = async user => {
-  DB.push(user);
-  return get(user.id);
+  if (!user) {
+    throw new Error(`The user with id: ${id} was not found`);
+  }
+
+  return user;
 };
 
-module.exports = { getAll, get, create };
+const create = async user => DB.createUser(user);
+
+const delById = async id => {
+  const user = await DB.delUser(id);
+
+  if (!user) {
+    throw new Error(`The user with id: ${id} has not been found`);
+  }
+
+  return user;
+};
+
+module.exports = { getAll, get, create, deleteById };
