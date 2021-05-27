@@ -1,11 +1,11 @@
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 class User {
   constructor({
-    id = uuid(),
-    name = 'USER',
-    login = 'user',
-    password = 'P@55w0rd'
+    id = uuidv4(),
+    name = 'TEST (User name)',
+    login = 'TEST (User login)',
+    password = 'TEST (User password)'
   } = {}) {
     this.id = id;
     this.name = name;
