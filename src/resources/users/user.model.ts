@@ -1,15 +1,19 @@
 const { v4: uuidv4 } = require('uuid');
 /**The class creating a user */
 class User {
+  id: string;
+  name: string;
+  login: string;
+  password: string;
   /**
    * create a user
    * @param {Object.<string, string, string, string>} user with fields id, name, login, password
    */
   constructor({
     id = uuidv4(),
-    name = 'TEST (User name)',
-    login = 'TEST (User login)',
-    password = 'TEST (User password)'
+    name = 'TEST (u name)',
+    login = 'TEST (u login)',
+    password = 'TEST (u password)'
   } = {}) {
     this.id = id;
     this.name = name;
@@ -21,7 +25,7 @@ class User {
    * @param {Object} user with fields id, name, login, password
    * @returns {Object} returns object user without field password
    */
-  static toResponse(user) {
+  static toResponse(user: User): object {
     const { id, name, login } = user;
     return { id, name, login };
   }
