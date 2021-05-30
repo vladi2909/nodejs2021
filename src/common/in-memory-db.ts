@@ -1,8 +1,13 @@
+import { Board } from "../interfaces/board.model";
+import { DB } from "../interfaces/DB.model";
+import { Task } from "../interfaces/task.model";
+import { User } from "../interfaces/user.model";
+
 const User = require('../resources/users/user.model');
 const Board = require('../resources/boards/board.model');
 const Task = require('../resources/tasks/task.model');
 
-const Database = {
+const Database: DB = {
   users: [],
   boards: [],
   tasks: [],
@@ -15,19 +20,19 @@ Database.tasks.push(new Task(), new Task());
  * Gets all users from Database
  * @returns {Array} returns a copied array of all users
  */
-const getAllUsers = async () => Database.users.slice(0);
+const getAllUsers = async (): Promise<Array<object>> => Database.users.slice(0);
 /**
  * Gets user by id from Database
  * @param {string} id the user id of which to find
  * @returns {Object} returns the user if there is such an id
  */
-const getUser = async id => Database.users.filter(item => item.id === id)[0];
+const getUser = async (id: string): Promise<object | undefined> => Database.users.filter(item => item.id === id)[0];
 /**
  * Create a new user in the Database
  * @param {Object} user new user to create
  * @returns {Object} returns the created user
  */
-const createUser = async user => {
+const createUser = async (user: User): Promise<object> => {
   Database.users.push(user);
   return user;
 };
@@ -36,7 +41,7 @@ const createUser = async user => {
  * @param {string} id the id of user to be deleted
  * @returns {Object} returns the deleted user
  */
-const delUser = async id => {
+const delUser = async (id: string): Promise<object | boolean> => {
   const deletion = Database.users.filter(item => item.id === id)[0];
   if (!deletion) {
     return false;
@@ -51,7 +56,7 @@ const delUser = async id => {
  * @param {Object} modUser the user to be changed
  * @returns {Object} updated user
  */
-const updateUser = async (id, modUser) => {
+const updateUser = async (id: string, modUser: User): Promise<object | boolean> => {
   const user = Database.users.filter(item => item.id === id)[0];
   if (!user) {
     return false;
@@ -71,19 +76,19 @@ const updateUser = async (id, modUser) => {
  * Gets all boards from Database
  * @returns {Array} returns a copied array of all boards
  */
-const getAllBoards = async () => Database.boards.slice(0);
+const getAllBoards = async (): Promise<Array<object>> => Database.boards.slice(0);
 /**
  * Gets boards by id from Database
  * @param {string} id the board id of which to find
  * @returns {Object} returns the board if there is such an id
  */
-const getBoard = async id => Database.boards.filter(item => item.id === id)[0];
+const getBoard = async (id: string): Promise<object | undefined> => Database.boards.filter(item => item.id === id)[0];
 /**
  * Create a new board in the Database
  * @param {Object} board new board to create
  * @returns {Object} returns the created board
  */
-const createBoard = async board => {
+const createBoard = async (board: Board): Promise<object> => {
   Database.boards.push(board);
   return board;
 };
@@ -92,7 +97,7 @@ const createBoard = async board => {
  * @param {string} id the id of board to be deleted
  * @returns {Object} returns the deleted board
  */
-const delBoard = async id => {
+const delBoard = async (id: string): Promise<object | boolean> => {
   const deletion = Database.boards.filter(item => item.id === id)[0];
   if (!deletion) {
     return false;
@@ -108,7 +113,7 @@ const delBoard = async id => {
  * @returns updated board
  * @returns {Object} updated board
  */
-const updateBoard = async (id, modBoard) => {
+const updateBoard = async (id: string, modBoard: Board): Promise<object | boolean> => {
   const board = Database.boards.filter(item => item.id === id)[0];
   if (!board) {
     return false;
@@ -129,19 +134,19 @@ const updateBoard = async (id, modBoard) => {
  * Gets all tasks by boards
  * @returns {Array} returns coppied array of all tasks
  */
-const getAllTasksByBoard = async () => Database.tasks.slice(0);
+const getAllTasksByBoard = async (): Promise<Array<object>> => Database.tasks.slice(0);
 /**
  * Gets tasks by id from Database
  * @param {string} id the task id of which to find
  * @returns {Object} returns the task if there is such an id
  */
-const getTask = async id => Database.tasks.filter(item => item.id === id)[0];
+const getTask = async (id: string): Promise<object | undefined> => Database.tasks.filter(item => item.id === id)[0];
 /**
  * Create a new task in the Database
  * @param {Object} task new task to create
  * @returns {Object} returns the created task
  */
-const createTask = async task => {
+const createTask = async (task: Task): Promise<object> => {
   Database.tasks.push(task);
   return task;
 };
@@ -152,7 +157,7 @@ const createTask = async task => {
  * @returns updated task
  * @returns {Object} updated task
  */
-const updateTask = async (id, modTask) => {
+const updateTask = async (id: string, modTask: Task): Promise<object | boolean> => {
   const task = Database.tasks.filter(item => item.id === id)[0];
   if (!task) {
     return false;
@@ -173,7 +178,7 @@ const updateTask = async (id, modTask) => {
  * @param {string} id the id of task to be deleted
  * @returns {Object} returns the deleted task
  */
-const delTask = async id => {
+const delTask = async (id: string): Promise<object | boolean> => {
   const deletion = Database.tasks.filter(item => item.id === id)[0];
   if (!deletion) {
     return false;
@@ -187,17 +192,19 @@ const delTask = async id => {
  * @param {string} userId id of the user to be deleted
  * @returns {Array} returns tasks with modified user id
  */
-const delTasksUserId = async userId => {
+const delTasksUserId = async (userId: string): Promise<Array<object>> => {
     Database.tasks = Database.tasks.map(item =>
     item.userId === userId ? { ...item, userId: null } : { ...item }
   );
+
+  return Database.tasks;
 };
 /**
  * Removing a board removes all tasks that were on that board
  * @param {string} boardId the id of board to be deleted
  * @returns {Array} new array after deletion
  */
-const delTasksByBoard = async boardId => {
+const delTasksByBoard = async (boardId: string): Promise<Array<object>> => {
   Database.tasks = Database.tasks.filter(item => item.boardId !== boardId);
   return Database.tasks;
 };
