@@ -1,21 +1,22 @@
 const DB = require('../../common/in-memory-db');
+import { User } from "../../interfaces/user.model";
 /**
  * Gets all users
  * @async
  * @returns {Promise<Array>} returns coppied array of all users
  */
-const getAll = async () => DB.getAllUsers();
+const getAll = async (): Promise<Array<object>> => DB.getAllUsers();
 /**
  * Finds a user by id, if there is no user with that id, an error is returned
  * @async
  * @param {string} id the user id of which to find
  * @returns {Promise<Object>} returns the user if there is such an id
  */
-const get = async id => {
+const get = async (id: string): Promise<object> => {
   const user = DB.getUser(id);
 
   if (!user) {
-    throw new Error(`The user with id: ${id} was not found`);
+    throw new Error(`User by id: ${id} wasn't found`);
   }
 
   return user;
@@ -26,19 +27,19 @@ const get = async id => {
  * @param {Object} user new user to create 
  * @returns {Promise<Object>} returns the created user
  */
-const create = async user => DB.createUser(user);
+const create = async (user: User): Promise<object> => DB.createUser(user);
 /**
  * Delete user by id from Database
  * @async
  * @param {string} id the id of user to be deleted
  * @returns {Promise<Object>} returns the deleted user
  */
-const delById = async id => {
+const delById = async (id: string): Promise<object | boolean> => {
   const user = await DB.delUser(id);
   DB.delTasksUserId(id);
 
   if (!user) {
-    throw new Error(`The user with id: ${id} has not been found`);
+    throw new Error(`User by id: ${id} hasn't been found`);
   }
 
   return user;
@@ -50,10 +51,10 @@ const delById = async id => {
  * @param {Object} modUser the user to be changed
  * @returns {Promise<Object>} updated user
  */
-const update = async (id, modUser) => {
+const update = async (id: string, modUser: User): Promise<object | boolean> => {
   const user = await DB.updateUser(id, modUser);
   if (!user) {
-    throw new Error(`The user with id: ${id} has not been found`);
+    throw new Error(`User by id: ${id} hasn't been found`);
   }
 
   return user;
