@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 /**The class creating a board */
-class Board {
+export class Board {
   id: string;
   title: string;
   columns: {
@@ -32,10 +32,8 @@ class Board {
    * @param {Object} board with fields id, title, columns
    * @returns {Object} returns object board
    */
-  static toResponse(board: Board): object {
+  static toResponse(board: { id: string; title: string; columns: { id: string; title: string; order: number }[]; }): object {
     const { id, title, columns } = board;
     return { id, title, columns };
   }
 }
-
-module.exports = Board;

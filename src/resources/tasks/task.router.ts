@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const Task = require('./task.model');
 const tasksService = require('./task.service');
+import { Request, Response } from 'express';
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (_req: Request, res: Response) => {
   const tasks = await tasksService.getAllByBoard();
   res.json(tasks.map(Task.toResponse));
 });
 
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(async (req: Request, res: Response) => {
   try {
     const task = await tasksService.get(req.params.id);
     res.status(200).json(Task.toResponse(task));
@@ -16,7 +17,7 @@ router.route('/:id').get(async (req, res) => {
   }
 });
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(async (req: Request, res: Response) => {
   const task = await tasksService.create(
     new Task({
       title: req.body.title,
@@ -35,7 +36,7 @@ router.route('/').post(async (req, res) => {
   }
 });
 
-router.route('/:id').delete(async (req, res) => {
+router.route('/:id').delete(async (req: Request, res: Response) => {
   try {
     const task = await tasksService.delById(req.params.id);
     res.status(200).json(Task.toResponse(task));
@@ -44,7 +45,7 @@ router.route('/:id').delete(async (req, res) => {
   }
 });
 
-router.route('/:id').put(async (req, res) => {
+router.route('/:id').put(async (req: Request, res: Response) => {
   const modTask = {
     title: req.body.title,
     order: req.body.order,

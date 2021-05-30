@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
+import { Request, Response } from 'express';
 
-router.route('/').get(async (req, res) => {
+router.route('/').get(async (_req: Request, res: Response) => {
   const users = await usersService.getAll();
   res.json(users.map(User.toResponse));
 });
 
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(async (req: Request, res: Response) => {
   try {
     const user = await usersService.get(req.params.id);
     res.status(200).json(User.toResponse(user));
@@ -16,7 +17,7 @@ router.route('/:id').get(async (req, res) => {
   }
 });
 
-router.route('/').post(async (req, res) => {
+router.route('/').post(async (req: Request, res: Response) => {
   const user = await usersService.create(
     new User({
       name: req.body.name,
@@ -31,7 +32,7 @@ router.route('/').post(async (req, res) => {
   }
 });
 
-router.route('/:id').delete(async (req, res) => {
+router.route('/:id').delete(async (req: Request, res: Response) => {
   try {
     const user = await usersService.delById(req.params.id);
     res.status(200).json(User.toResponse(user));
@@ -40,7 +41,7 @@ router.route('/:id').delete(async (req, res) => {
   }
 });
 
-router.route('/:id').put(async (req, res) => {
+router.route('/:id').put(async (req: Request, res: Response) => {
   const modUser = {
     id: req.params.id,
     name: req.body.name,
