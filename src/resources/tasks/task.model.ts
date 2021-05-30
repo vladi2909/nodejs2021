@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 /**The class creating a task */
-class Task {
+export class Task {
   id: string;
   title: string;
   order: number;
@@ -39,5 +39,3 @@ class Task {
     return { id, title, order, description, userId, boardId, columnId };
   }
 }
-
-module.exports = Task;

@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 /**The class creating a user */
-class User {
+export class User {
   id: string;
   name: string;
   login: string;
@@ -30,5 +30,3 @@ class User {
     return { id, name, login };
   }
 }
-
-module.exports = User;

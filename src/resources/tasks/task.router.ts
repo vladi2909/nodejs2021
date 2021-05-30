@@ -10,7 +10,7 @@ router.route('/').get(async (_req: Request, res: Response) => {
 
 router.route('/:id').get(async (req: Request, res: Response) => {
   try {
-    const task = await tasksService.get(req.params.id);
+    const task = await tasksService.get(req.params['id']);
     res.status(200).json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);
@@ -38,7 +38,7 @@ router.route('/').post(async (req: Request, res: Response) => {
 
 router.route('/:id').delete(async (req: Request, res: Response) => {
   try {
-    const task = await tasksService.delById(req.params.id);
+    const task = await tasksService.delById(req.params['id']);
     res.status(200).json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);
@@ -53,11 +53,11 @@ router.route('/:id').put(async (req: Request, res: Response) => {
     userId: req.body.userId,
     boardId: req.body.boardId,
     columnId: req.body.columnId,
-    id: req.params.id,
+    id: req.params['id'],
   };
 
   try {
-    const task = await tasksService.update(req.params.id, modTask);
+    const task = await tasksService.update(req.params['id'], modTask);
     res.json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);
