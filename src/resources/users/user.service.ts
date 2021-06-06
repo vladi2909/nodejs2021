@@ -1,35 +1,56 @@
-import { User } from "../../interfaces/user.model";
+import { IUser } from '../../models/user.model';
 
 const usersRepo = require('./user.memory.repository');
-/**
- * Gets all users
- * @returns {Promise<Array>} returns coppied array of all users
- */
-const getAll = (): Promise<Array<User>> => usersRepo.getAll();
-/**
- * Finds a user by id, if there is no user with that id, an error is returned
- * @param {string} id the user id of which to find
- * @returns {Promise<Object>} returns the user if there is such an id
- */
-const get = (id: string): Promise<User> => usersRepo.get(id);
-/**
- * Create a new user in the Database
- * @param {Object} user new user to create
- * @returns {Promise<Object>} returns the created user
- */
-const create = (user: User): Promise<User> => usersRepo.create(user);
-/**
- * Delete user by id from Database
- * @param {string} id the id of user to be deleted
- * @returns {Promise<Object>} returns the deleted user
- */
-const delById = (id: string): Promise<User> => usersRepo.delById(id);
-/**
- * Update user in the Database, if there is no user with that id, an error is returned
- * @param {string} id the user id of which to find and update
- * @param {Object} modUser the user to be changed
- * @returns {Promise<Object>} updated user
- */
-const update = (id: string, modUser: User): Promise<User> => usersRepo.update(id, modUser);
 
-module.exports = { getAll, get, create, delById, update };
+/**
+ * Shows all users
+ *
+ * @async
+ * @function getAll
+ * @return {Promise<array>} returns a new array containing copies of all users.
+ */
+const getAll = (): Promise<Array<IUser>> => usersRepo.getAll();
+
+/**
+ * Finds a user in the database by ID. If there is no user with this ID, it returns an error.
+ *
+ * @async
+ * @function get
+ * @param {String} id the user you want to find
+ * @return {Promise<Object>} returns the user with the specified id
+ */
+const get = (id: string): Promise<IUser> => usersRepo.get(id);
+
+/**
+ * Adds a new user to the database.
+ *
+ * @async
+ * @function create
+ * @param {Object} new user
+ * @return {Promise<Object>} returns the user who was created
+ */
+const create = (user: IUser): Promise<IUser> => usersRepo.create(user);
+
+/**
+ * A user by ID and removes it from the database. And finds all tasks associated with this user and changes the userId to null. If there is no user with this ID, it returns an error.
+ *
+ * @async
+ * @function deleteById
+ * @param {String} id the user you want to find
+ * @return {Promise<Object>} returns the deleted user
+ */
+const deleteById = (id: string): Promise<IUser> => usersRepo.deleteById(id);
+
+/**
+ * Finds a user in the database and edits it. If there is no user with this ID, it returns an error.
+ *
+ * @async
+ * @function update
+ * @param {String} id the user you want to find
+ * @param {Object} edited user
+ * @return {Promise<Object>} edited user
+ */
+const update = (id: string, modifiedUser: IUser): Promise<IUser> =>
+  usersRepo.update(id, modifiedUser);
+
+module.exports = { getAll, get, create, deleteById, update };

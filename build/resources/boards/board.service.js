@@ -1,33 +1,49 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const boardsRepo = require('./board.memory.repository');
 /**
- * Gets all boards
- * @returns {Promise<Array>} returns coppied array of all boards
+ * Shows all boards
+ *
+ * @async
+ * @function getAll
+ * @return {Promise<array>} returns a new array containing copies of all boards.
  */
 const getAll = () => boardsRepo.getAll();
 /**
- * Finds a board by id, if there is no board with that id, an error is returned
- * @param {string} id the board id of which to find
- * @returns {Promise<Object>} returns the board if there is such an id
+ * Finds a board in the database by ID. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function get
+ * @param {String} id the board you want to find
+ * @return {Promise<Object>} returns the board with the specified id
  */
 const get = (id) => boardsRepo.get(id);
 /**
- * Create a new board in the Database
- * @param {Object} board new board to create
- * @returns {Promise<Object>} returns the created board
+ * Adds a new board to the database.
+ *
+ * @async
+ * @function create
+ * @param {Object} new board
+ * @return {Promise<Object>} returns the board who was created
  */
 const create = (board) => boardsRepo.create(board);
 /**
- * Delete board by id from Database
- * @param {string} id the id of board to be deleted
- * @returns {Promise<Object>} returns the deleted board
+ * A board by ID and removes it from the database.And removes all tasks that were on this board. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function deleteById
+ * @param {String} id the board you want to find
+ * @return {Promise<Object>} returns the deleted board
  */
-const delById = (id) => boardsRepo.delById(id);
+const deleteById = (id) => boardsRepo.deleteById(id);
 /**
- * Update board in the Database, if there is no board with that id, an error is returned
- * @param {string} id the board id of which to find and update
- * @param {Object} modBoard the board to be changed
- * @returns {Promise<Object>} updated board
+ * Finds a board in the database and edits it. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function update
+ * @param {String} id the board you want to find
+ * @param {Object} edited board
+ * @return {Promise<Object>} edited board
  */
-const update = (id, modBoard) => boardsRepo.update(id, modBoard);
-module.exports = { getAll, get, create, delById, update };
-
+const update = (id, modifiedBoard) => boardsRepo.update(id, modifiedBoard);
+module.exports = { getAll, get, create, deleteById, update };

@@ -1,63 +1,87 @@
-const DB = require('../../common/in-memory-db');
-import { User } from "../../interfaces/user.model";
+import {
+  getAllUsers,
+  getUser,
+  createUser,
+  deleteUser,
+  deleteTasksUserId,
+  updateUser,
+} from '../../common/DB';
+import { IUser } from '../../models/user.model';
 /**
- * Gets all users
+ * Shows all users
+ *
  * @async
- * @returns {Promise<Array>} returns coppied array of all users
+ * @function getAll
+ * @return {Promise<array>} returns a new array containing copies of all users.
  */
-const getAll = async (): Promise<Array<object>> => DB.getAllUsers();
+const getAll = async (): Promise<Array<object>> => getAllUsers();
+
 /**
- * Finds a user by id, if there is no user with that id, an error is returned
+ * Finds a user in the database by ID. If there is no user with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the user id of which to find
- * @returns {Promise<Object>} returns the user if there is such an id
+ * @function get
+ * @param {String} id the user you want to find
+ * @return {Promise<Object>} returns the user with the specified id
  */
 const get = async (id: string): Promise<object> => {
-  const user = DB.getUser(id);
+  const user = await getUser(id);
 
   if (!user) {
-    throw new Error(`User by id: ${id} wasn't found`);
+    throw new Error(`The user with id: ${id} was not found`);
   }
-
   return user;
 };
+
 /**
- * Create a new user in the Database
+ * Adds a new user to the database.
+ *
  * @async
- * @param {Object} user new user to create 
- * @returns {Promise<Object>} returns the created user
+ * @function create
+ * @param {Object} new user
+ * @return {Promise<Object>} returns the user who was created
  */
-const create = async (user: User): Promise<object> => DB.createUser(user);
+const create = async (user: IUser): Promise<object> => createUser(user);
+
 /**
- * Delete user by id from Database
+ * A user by ID and removes it from the database. And finds all tasks associated with this user and changes the userId to null. If there is no user with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the id of user to be deleted
- * @returns {Promise<Object>} returns the deleted user
+ * @function deleteById
+ * @param {String} id the user you want to find
+ * @return {Promise<Object>} returns the deleted user
  */
-const delById = async (id: string): Promise<object | boolean> => {
-  const user = await DB.delUser(id);
-  DB.delTasksUserId(id);
+const deleteById = async (id: string): Promise<object | boolean> => {
+  const user = await deleteUser(id);
+
+  deleteTasksUserId(id);
 
   if (!user) {
-    throw new Error(`User by id: ${id} hasn't been found`);
-  }
-
-  return user;
-};
-/**
- * Update user in the Database, if there is no user with that id, an error is returned
- * @async
- * @param {string} id the user id of which to find and update
- * @param {Object} modUser the user to be changed
- * @returns {Promise<Object>} updated user
- */
-const update = async (id: string, modUser: User): Promise<object | boolean> => {
-  const user = await DB.updateUser(id, modUser);
-  if (!user) {
-    throw new Error(`User by id: ${id} hasn't been found`);
+    throw new Error(`The user with id: ${id} has not been found`);
   }
 
   return user;
 };
 
-module.exports = { getAll, get, create, delById, update };
+/**
+ * Finds a user in the database and edits it. If there is no user with this ID, it returns an error.
+ *
+ * @async
+ * @function update
+ * @param {String} id the user you want to find
+ * @param {Object} edited user
+ * @return {Promise<Object>} edited user
+ */
+const update = async (
+  id: string,
+  modifiedUser: IUser
+): Promise<object | boolean> => {
+  const user = await updateUser(id, modifiedUser);
+
+  if (!user) {
+    throw new Error(`The user with id: ${id} has not been found`);
+  }
+  return user;
+};
+
+module.exports = { getAll, get, create, deleteById, update };

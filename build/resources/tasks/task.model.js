@@ -1,11 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Task = void 0;
 const { v4: uuidv4 } = require('uuid');
-/**The class creating a task */
+/** Class representing a Task. */
 class Task {
     /**
-     * create a task
-     * @param {Object.<string, string, number, string, string, string, string>} task with fields id, title, order, description, userId, boardId, columnId
+     * Create a task.
+     * @param {Object.<string, string, number, string, string, string, string>} object task with key values id, title, order, description, userId, boardId, columnId.
      */
-    constructor({ id = uuidv4(), title = 'TEST(t title)', order = 0, description = 'TEST(t description)', userId = 'TEST(t userId)', boardId = 'TEST(t userId)', columnId = 'TEST(t userId)', } = {}) {
+    constructor({ id = uuidv4(), title = 'TEST(Task title)', order = 0, description = 'TEST(Task description)', userId = 'TEST(Task userId)', boardId = 'TEST(Task userId)', columnId = 'TEST(Task userId)', } = {}) {
         this.id = id;
         this.title = title;
         this.order = order;
@@ -15,14 +18,13 @@ class Task {
         this.columnId = columnId;
     }
     /**
-     * static method returns new object task
-     * @param {Object} task with fields id, title, order, description, userId, boardId, columnId
-     * @returns {object} return object task
+     *
+     * @param {Object}  object task with key values id, title, order, description, userId, boardId, columnId.
+     * @returns {Object} returns a Task object
      */
     static toResponse(task) {
         const { id, title, order, description, userId, boardId, columnId } = task;
         return { id, title, order, description, userId, boardId, columnId };
     }
 }
-
-exports.module = Task;
+exports.Task = Task;

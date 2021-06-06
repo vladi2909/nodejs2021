@@ -1,14 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Board = void 0;
 const { v4: uuidv4 } = require('uuid');
-/**The class creating a board */
+/** Class representing a Board. */
 class Board {
     /**
-     * create a board
-     * @param {Object.<string, string, Array.<Object.<string, string, number>>>} board with fields id, title, columns that consist id, title, order
+     * Create a board.
+     * @param {Object.<string, string, Array.<Object.<string, string, number>>>} object board with key values id, title, columns. Columns it is an array of column objects. With its key values id, title, order.
      */
-    constructor({ id = uuidv4(), title = 'TEST(b title)', columns = [
+    constructor({ id = uuidv4(), title = 'TEST (Board title)', columns = [
         {
             id: uuidv4(),
-            title: 'TEST(c title)',
+            title: 'TEST (Column title)',
             order: 0,
         },
     ], } = {}) {
@@ -17,14 +20,13 @@ class Board {
         this.columns = columns;
     }
     /**
-     * static method returns new object board
-     * @param {Object} board with fields id, title, columns
-     * @returns {Object} returns object board
+     *
+     * @param {Object}  object board with key values id, title, columns. Columns it is an array of column objects. With its key values id, title, order.
+     * @returns {Object} returns a Board object
      */
     static toResponse(board) {
         const { id, title, columns } = board;
         return { id, title, columns };
     }
 }
-
-exports.module = Board;
+exports.Board = Board;

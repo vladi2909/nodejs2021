@@ -1,62 +1,88 @@
-const DB = require('../../common/in-memory-db');
-import { Board } from "../../interfaces/board.model";
+import {
+  getAllBoards,
+  getBoard,
+  createBoard,
+  deleteBoard,
+  updateBoard,
+  deleteTasksByBoard,
+} from '../../common/DB';
+import { IBoard } from '../../models/board.model';
 /**
- * Gets all boards
+ * Shows all boards
+ *
  * @async
- * @returns {Promise<Array>} returns coppied array of all boards
+ * @function getAll
+ * @return {Promise<array>} returns a new array containing copies of all boards.
  */
-const getAll = async (): Promise<Array<object>> => DB.getAllBoards();
+const getAll = async (): Promise<Array<object>> => getAllBoards();
+
 /**
- * Finds a board by id, if there is no board with that id, an error is returned
+ * Finds a board in the database by ID. If there is no board with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the board id of which to find
- * @returns {Promise<Object>} returns the board if there is such an id
+ * @function get
+ * @param {String} id the board you want to find
+ * @return {Promise<Object>} returns the board with the specified id
  */
 const get = async (id: string): Promise<object> => {
-  const board = await DB.getBoard(id);
+  const board = await getBoard(id);
 
   if (!board) {
-    throw new Error(`Board by id: ${id} hasn't been found`);
+    throw new Error(`The board with id: ${id} has not been found`);
   }
 
   return board;
 };
-/**
- * Create a new board in the Database
- * @async
- * @param {Object} board new board to create
- * @returns {Promise<Object>} returns the created board
- */
-const create = async (board: Board): Promise<object> => DB.createBoard(board);
-/**
- * Delete board by id from Database
- * @async
- * @param {string} id the id of board to be deleted
- * @returns {Promise<Object>} returns the deleted board
- */
-const delById = async (id: string): Promise<object | boolean> => {
-  const board = await DB.delBoard(id);
-  DB.delTasksByBoard(id);
-  if (!board) {
-    throw new Error(`Board by id: ${id} hasn't been found`);
-  }
 
-  return board;
-};
 /**
- * Update board in the Database, if there is no board with that id, an error is returned
+ * Adds a new board to the database.
+ *
  * @async
- * @param {string} id the board id of which to find and update
- * @param {Object} modBoard the board to be changed
- * @returns {Promise<Object>} updated board
+ * @function create
+ * @param {Object} new board
+ * @return {Promise<Object>} returns the board who was created
  */
-const update = async (id: string, modBoard: Board): Promise<object | boolean> => {
-  const board = await DB.updateBoard(id, modBoard);
+const create = async (board: IBoard): Promise<object> =>
+  createBoard(board);
+
+/**
+ * A board by ID and removes it from the database.And removes all tasks that were on this board. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function deleteById
+ * @param {String} id the board you want to find
+ * @return {Promise<Object>} returns the deleted board
+ */
+const deleteById = async (id: string): Promise<object | boolean> => {
+  const board = await deleteBoard(id);
+
+  deleteTasksByBoard(id);
+
   if (!board) {
-    throw new Error(`Board by id: ${id} hasn't been found`);
+    throw new Error(`The board with id: ${id} has not been found`);
   }
-  
   return board;
 };
 
-module.exports = { getAll, get, create, delById, update };
+/**
+ * Finds a board in the database and edits it. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function update
+ * @param {String} id the board you want to find
+ * @param {Object} edited board
+ * @return {Promise<Object>} edited board
+ */
+const update = async (
+  id: string,
+  modifiedBoard: IBoard
+): Promise<object | boolean> => {
+  const board = await updateBoard(id, modifiedBoard);
+
+  if (!board) {
+    throw new Error(`The board with id: ${id} has not been found`);
+  }
+  return board;
+};
+
+module.exports = { getAll, get, create, deleteById, update };

@@ -1,55 +1,67 @@
-const DB = require('../../common/in-memory-db');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const DB_1 = require("../../common/DB");
 /**
- * Gets all boards
+ * Shows all tasks
+ *
  * @async
- * @returns {Promise<Array>} returns coppied array of all boards
+ * @function getAllByBoard
+ * @return {Promise<array>} returns a new array containing copies of all tasks.
  */
-const getAllByBoard = async () => DB.getAllTasksByBoard();
+const getAllByBoard = async () => DB_1.getAllTasksByBoard();
 /**
- * Finds a task by id, if there is no task with that id, an error is returned
+ * Finds a task in the database by ID. If there is no board with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the task id of which to find
- * @returns {Promise<Object>} returns the task if there is such an id
+ * @function get
+ * @param {String} id the task you want to find
+ * @return {Promise<Object>} returns the task with the specified id
  */
 const get = async (id) => {
-    const task = DB.getTask(id);
+    const task = await DB_1.getTask(id);
     if (!task) {
-        throw new Error(`User by id: ${id} wasn't found`);
+        throw new Error(`The user with id: ${id} was not found`);
     }
     return task;
 };
 /**
- * Create a new task in the Database
+ * Adds a new task to the database.
+ *
  * @async
- * @param {Object} task new task to create
- * @returns {Promise<Object>} returns the created task
+ * @function create
+ * @param {Object} new task
+ * @return {Promise<Object>} returns the task who was created
  */
-const create = async (task) => DB.createTask(task);
+const create = async (task) => DB_1.createTask(task);
 /**
- * Delete task by id from Database
+ * A task by ID and removes it from the database. If there is no task with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the id of task to be deleted
- * @returns {Promise<Object>} returns the deleted task
+ * @function deleteById
+ * @param {String} id the task you want to find
+ * @return {Promise<Object>} returns the deleted task
  */
-const delById = async (id) => {
-    const task = await DB.delTask(id);
+const deleteById = async (id) => {
+    const task = await DB_1.deleteTask(id);
     if (!task) {
-        throw new Error(`Task by id: ${id} hasn't been found`);
+        throw new Error(`The task with id: ${id} has not been found`);
     }
     return task;
 };
 /**
- * Update task in the Database, if there is no task with that id, an error is returned
+ * Finds a task in the database and edits it. If there is no task with this ID, it returns an error.
+ *
  * @async
- * @param {string} id the task id of which to find and update
- * @param {Object} modTask the task to be changed
- * @returns {Promise<Object>} updated task
+ * @function update
+ * @param {String} id the task you want to find
+ * @param {Object} edited task
+ * @return {Promise<Object>} edited task
  */
-const update = async (id, modTask) => {
-    const task = await DB.updateTask(id, modTask);
+const update = async (id, modifiedTask) => {
+    const task = await DB_1.updateTask(id, modifiedTask);
     if (!task) {
-        throw new Error(`User by id: ${id} hasn't been found`);
+        throw new Error(`The user with id: ${id} has not been found`);
     }
     return task;
 };
-module.exports = { getAllByBoard, get, create, delById, update };
+module.exports = { getAllByBoard, get, create, deleteById, update };

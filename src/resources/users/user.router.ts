@@ -1,7 +1,8 @@
-const router = require('express').Router();
-const User = require('./user.model');
-const usersService = require('./user.service');
 import { Request, Response } from 'express';
+import { User } from './user.model';
+
+const router = require('express').Router();
+const usersService = require('./user.service');
 
 router.route('/').get(async (_req: Request, res: Response) => {
   const users = await usersService.getAll();
@@ -34,7 +35,7 @@ router.route('/').post(async (req: Request, res: Response) => {
 
 router.route('/:id').delete(async (req: Request, res: Response) => {
   try {
-    const user = await usersService.delById(req.params['id']);
+    const user = await usersService.deleteById(req.params['id']);
     res.status(200).json(User.toResponse(user));
   } catch (error) {
     res.status(404).send(error.message);
@@ -42,7 +43,7 @@ router.route('/:id').delete(async (req: Request, res: Response) => {
 });
 
 router.route('/:id').put(async (req: Request, res: Response) => {
-  const modUser = {
+  const modifiedUser = {
     id: req.params['id'],
     name: req.body.name,
     login: req.body.login,
@@ -50,7 +51,7 @@ router.route('/:id').put(async (req: Request, res: Response) => {
   };
 
   try {
-    const user = await usersService.update(req.params['id'], modUser);
+    const user = await usersService.update(req.params['id'], modifiedUser);
     res.json(User.toResponse(user));
   } catch (error) {
     res.status(404).send(error.message);

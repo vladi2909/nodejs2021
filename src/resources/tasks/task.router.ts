@@ -1,7 +1,8 @@
-const router = require('express').Router();
-const Task = require('./task.model');
-const tasksService = require('./task.service');
 import { Request, Response } from 'express';
+import { Task } from './task.model';
+
+const router = require('express').Router();
+const tasksService = require('./task.service');
 
 router.route('/').get(async (_req: Request, res: Response) => {
   const tasks = await tasksService.getAllByBoard();
@@ -28,7 +29,6 @@ router.route('/').post(async (req: Request, res: Response) => {
       columnId: req.body.columnId,
     })
   );
-
   try {
     res.status(201).json(Task.toResponse(task));
   } catch (error) {
@@ -38,7 +38,7 @@ router.route('/').post(async (req: Request, res: Response) => {
 
 router.route('/:id').delete(async (req: Request, res: Response) => {
   try {
-    const task = await tasksService.delById(req.params['id']);
+    const task = await tasksService.deleteById(req.params['id']);
     res.status(200).json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);
@@ -46,7 +46,7 @@ router.route('/:id').delete(async (req: Request, res: Response) => {
 });
 
 router.route('/:id').put(async (req: Request, res: Response) => {
-  const modTask = {
+  const modifiedTask = {
     title: req.body.title,
     order: req.body.order,
     description: req.body.description,
@@ -55,9 +55,8 @@ router.route('/:id').put(async (req: Request, res: Response) => {
     columnId: req.body.columnId,
     id: req.params['id'],
   };
-
   try {
-    const task = await tasksService.update(req.params['id'], modTask);
+    const task = await tasksService.update(req.params['id'], modifiedTask);
     res.json(Task.toResponse(task));
   } catch (error) {
     res.status(404).send(error.message);

@@ -1,32 +1,49 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const tasksRepo = require('./task.memory.repository');
 /**
- * Gets all tasks
- * @returns {Promise<Array>} returns coppied array of all tasks
+ * Shows all tasks
+ *
+ * @async
+ * @function getAllByBoard
+ * @return {Promise<array>} returns a new array containing copies of all tasks.
  */
 const getAllByBoard = () => tasksRepo.getAllByBoard();
 /**
- * Finds a task by id, if there is no task with that id, an error is returned
- * @param {string} id the task id of which to find
- * @returns {Promise<Object>} returns the task if there is such an id
+ * Finds a task in the database by ID. If there is no board with this ID, it returns an error.
+ *
+ * @async
+ * @function get
+ * @param {String} id the task you want to find
+ * @return {Promise<Object>} returns the task with the specified id
  */
 const get = (id) => tasksRepo.get(id);
 /**
- * Create a new task in the Database
- * @param {Object} task new task to create
- * @returns {Promise<Object>} returns the created task
+ * Adds a new task to the database.
+ *
+ * @async
+ * @function create
+ * @param {Object} new task
+ * @return {Promise<Object>} returns the task who was created
  */
 const create = (task) => tasksRepo.create(task);
 /**
- * Delete task by id from Database
- * @param {string} id the id of task to be deleted
- * @returns {Promise<Object>} returns the deleted task
+ * A task by ID and removes it from the database. If there is no task with this ID, it returns an error.
+ *
+ * @async
+ * @function deleteById
+ * @param {String} id the task you want to find
+ * @return {Promise<Object>} returns the deleted task
  */
-const delById = (id) => tasksRepo.delById(id);
+const deleteById = (id) => tasksRepo.deleteById(id);
 /**
- * Update task in the Database, if there is no task with that id, an error is returned
- * @param {string} id the task id of which to find and update
- * @param {Object} modTask the task to be changed
- * @returns {Promise<Object>} updated task
+ * Finds a task in the database and edits it. If there is no task with this ID, it returns an error.
+ *
+ * @async
+ * @function update
+ * @param {String} id the task you want to find
+ * @param {Object} edited task
+ * @return {Promise<Object>} edited task
  */
-const update = (id, modTask) => tasksRepo.update(id, modTask);
-module.exports = { getAllByBoard, get, create, delById, update };
+const update = (id, modifiedTask) => tasksRepo.update(id, modifiedTask);
+module.exports = { getAllByBoard, get, create, deleteById, update };
