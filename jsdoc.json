@@ -1,7 +1,7 @@
 {
     "source": {
       "include": [
-        "src"
+        "build"
       ],
       "includePattern": ".js$",
       "excludePattern": "(node_modules/|docs)"

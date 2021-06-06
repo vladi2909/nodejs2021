@@ -17,7 +17,6 @@ export const getAllUsers = async (): Promise<Array<object>> => DB.users.slice(0)
 
 /**
  * Gets user by id from Database
- *
  * @param {String} id id the user id of which to find
  * @returns {Promise<Object>} returns the user if there is such an id
  */

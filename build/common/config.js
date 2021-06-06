@@ -1,8 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.path = void 0;
 const dotenv = require('dotenv');
-const path = require('path');
+exports.path = require('path');
 dotenv.config({
-    path: path.join(__dirname, '../../.env'),
+    path: exports.path.join(__dirname, '../../.env'),
 });
 module.exports = {
     PORT: process.env['PORT'],

@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const winston = require('winston');
-// import { path } from '../common/config';
 
 const logger = winston.createLogger({
   transports: [
@@ -35,10 +33,19 @@ const logger = winston.createLogger({
 });
 
 logger.stream = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  write(message: any, _encoding: any) {
+  write(message: string) {
     logger.info(message);
   },
 };
+
+process.on('uncaughtException', (error) => {
+  logger.error(`uncaughtException: ${error.message}`);
+  process.exitCode = 1;
+});
+
+process.on('unhandledRejection', (error) => {
+  logger.error(`unhandledRejection: ${error}`);
+  process.exitCode = 1;
+});
 
 module.exports = logger;
