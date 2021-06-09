@@ -2,14 +2,14 @@ import { IUser } from '../../models/user.model';
 const usersRepo = require('./user.memory.repository');
 
 /**
- * Gets all users
+ * Gets all users.
  * @async
- * @return {Promise<User[]>} returns a new array of all users.
+ * @return {Promise<User[]>} returns a new array of all users
  */
 const getAll = (): Promise<IUser[]> => usersRepo.getAll();
 
 /**
- * Finds a user by id
+ * Finds a user by id.
  * @async
  * @param {string} id the user id
  * @return {Promise<User>} returns the user if there is such an id
@@ -27,7 +27,7 @@ const create = (user: IUser): Promise<IUser> => usersRepo.create(user);
 /**
  * remove user.
  * @async
- * @param {String} id user id
+ * @param {string} id user id
  * @return {Promise<User>} returns the deleted user
  */
 const deleteById = (id: string): Promise<IUser> => usersRepo.deleteById(id);
