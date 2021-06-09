@@ -39,7 +39,6 @@ const deleteById = (id: string): Promise<IUser> => usersRepo.deleteById(id);
  * @param {Partial<User>} edited user
  * @return {Promise<User>} edited user
  */
-const update = (id: string, modUser: IUser): Promise<IUser> =>
-  usersRepo.update(id, modUser);
+const update = (id: string, modUser: IUser): Promise<IUser> => usersRepo.update(id, modUser);
 
 module.exports = { getAll, get, create, deleteById, update };
