@@ -1,56 +1,45 @@
 import { IUser } from '../../models/user.model';
-
 const usersRepo = require('./user.memory.repository');
 
 /**
- * Shows all users
- *
+ * Gets all users
  * @async
- * @function getAll
- * @return {Promise<array>} returns a new array containing copies of all users.
+ * @return {Promise<User[]>} returns a new array of all users.
  */
-const getAll = (): Promise<Array<IUser>> => usersRepo.getAll();
+const getAll = (): Promise<IUser[]> => usersRepo.getAll();
 
 /**
- * Finds a user in the database by ID. If there is no user with this ID, it returns an error.
- *
+ * Finds a user by id
  * @async
- * @function get
- * @param {String} id the user you want to find
- * @return {Promise<Object>} returns the user with the specified id
+ * @param {string} id the user id
+ * @return {Promise<User>} returns the user if there is such an id
  */
 const get = (id: string): Promise<IUser> => usersRepo.get(id);
 
 /**
- * Adds a new user to the database.
- *
+ * Add a new user.
  * @async
- * @function create
  * @param {Object} new user
- * @return {Promise<Object>} returns the user who was created
+ * @return {Promise<User>} returns the user
  */
 const create = (user: IUser): Promise<IUser> => usersRepo.create(user);
 
 /**
- * A user by ID and removes it from the database. And finds all tasks associated with this user and changes the userId to null. If there is no user with this ID, it returns an error.
- *
+ * remove user.
  * @async
- * @function deleteById
- * @param {String} id the user you want to find
- * @return {Promise<Object>} returns the deleted user
+ * @param {String} id user id
+ * @return {Promise<User>} returns the deleted user
  */
 const deleteById = (id: string): Promise<IUser> => usersRepo.deleteById(id);
 
 /**
- * Finds a user in the database and edits it. If there is no user with this ID, it returns an error.
- *
+ * Update user
  * @async
- * @function update
- * @param {String} id the user you want to find
- * @param {Object} edited user
- * @return {Promise<Object>} edited user
+ * @param {String} id user id
+ * @param {Partial<User>} edited user
+ * @return {Promise<User>} edited user
  */
-const update = (id: string, modifiedUser: IUser): Promise<IUser> =>
-  usersRepo.update(id, modifiedUser);
+const update = (id: string, modUser: IUser): Promise<IUser> =>
+  usersRepo.update(id, modUser);
 
 module.exports = { getAll, get, create, deleteById, update };
