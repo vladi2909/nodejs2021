@@ -2,58 +2,43 @@ import { IBoard } from '../../models/board.model';
 const boardsRepo = require('./board.memory.repository');
 
 /**
- * Shows all boards
- *
+ * Gets all boards
  * @async
- * @function getAll
- * @return {Promise<array>} returns a new array containing copies of all boards.
+ * @return {Promise<Board[]>} returns a new array of all boards
  */
-const getAll = (): Promise<Array<IBoard>> => boardsRepo.getAll();
+const getAll = (): Promise<IBoard[]> => boardsRepo.getAll();
 
 /**
- * Finds a board in the database by ID. If there is no board with this ID, it returns an error.
- *
+ * Finds a board by id.
  * @async
- * @function get
- * @param {String} id the board you want to find
- * @return {Promise<Object>} returns the board with the specified id
+ * @param {string} id the board id
+ * @return {Promise<Board>} returns the board if there is such an id
  */
 const get = (id: string): Promise<IBoard> => boardsRepo.get(id);
 
 /**
- * Adds a new board to the database.
- *
+ * Add a new board.
  * @async
- * @function create
  * @param {Object} new board
- * @return {Promise<Object>} returns the board who was created
+ * @return {Promise<Board>} returns the board
  */
-const create = (board: IBoard): Promise<IBoard> =>
-  boardsRepo.create(board);
+const create = (board: IBoard): Promise<IBoard> => boardsRepo.create(board);
 
 /**
- * A board by ID and removes it from the database.And removes all tasks that were on this board. If there is no board with this ID, it returns an error.
- *
+ * remove board.
  * @async
- * @function deleteById
- * @param {String} id the board you want to find
- * @return {Promise<Object>} returns the deleted board
+ * @param {string} id board id
+ * @return {Promise<Board>} returns the deleted board
  */
-const deleteById = (id: string): Promise<IBoard> =>
-  boardsRepo.deleteById(id);
+const deleteById = (id: string): Promise<IBoard> => boardsRepo.deleteById(id);
 
 /**
- * Finds a board in the database and edits it. If there is no board with this ID, it returns an error.
- *
+ * update a board.
  * @async
- * @function update
- * @param {String} id the board you want to find
- * @param {Object} edited board
- * @return {Promise<Object>} edited board
+ * @param {string} id board id
+ * @param {Board} edited board
+ * @return {Promise<Board>} edited board
  */
-const update = (
-  id: string,
-  modifiedBoard: IBoard
-): Promise<IBoard> => boardsRepo.update(id, modifiedBoard);
+const update = (id: string, modBoard: IBoard): Promise<IBoard> => boardsRepo.update(id, modBoard);
 
 module.exports = { getAll, get, create, deleteById, update };
