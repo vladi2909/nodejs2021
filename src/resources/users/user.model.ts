@@ -1,18 +1,18 @@
 const { v4: uuidv4 } = require('uuid');
 
-/** Class representing a User. */
+/** User class */
 export class User {
   id: string;
-
   name: string;
-
   login: string;
-
   password: string;
 
   /**
    * Create a user.
-   * @param {Object.<string, string, string, string>} object user with key values id, name, login, password.
+   * @param {string} user.id user with key id
+   * @param {string} user.name user with key name
+   * @param {string} user.login user with key login
+   * @param {string} user.password user with key password
    */
   constructor({
     id = uuidv4(),
@@ -27,9 +27,9 @@ export class User {
   }
 
   /**
-   *
-   * @param {Object} object user with key values id, name, login, password
-   * @returns {Object} returns a User object
+   * User to send
+   * @param {User} user user with key values
+   * @returns {User} returns a User object
    */
   static toResponse(user: { id: string; name: string; login: string }): object {
     const { id, name, login } = user;
