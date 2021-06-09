@@ -10,22 +10,22 @@ export const DB: IDB = {
 };
 
 /**
- * Gets all users from Database
- * @returns {Promise<Array>} returns a copied array of all users
+ * Gets all users.
+ * @returns {Promise<User[]>} returns array of all users
  */
 export const getAllUsers = async (): Promise<Array<object>> => DB.users.slice(0);
 
 /**
- * Gets user by id from Database
- * @param {String} id id the user id of which to find
- * @returns {Promise<Object>} returns the user if there is such an id
+ * Gets user by id.
+ * @param {string} id the user id
+ * @returns {Promise<User>} returns the user if there is such an id
  */
 export const getUser = async (id: string): Promise<object | undefined> => DB.users.filter(item => item.id === id)[0];
 
 /**
- * Adds a new user to the database.
- * @param {Object} new user
- * @returns {Promise<Object>} returns the user who was created
+ * Add a new user.
+ * @param {object} new user
+ * @returns {Promise<User>} returns the user
  */
 export const createUser = async (user: IUser): Promise<object> => {
   DB.users.push(user);
@@ -33,9 +33,9 @@ export const createUser = async (user: IUser): Promise<object> => {
 };
 
 /**
- * A user by ID and removes it from the database.
- * @param {String} id the user you want to find
- * @returns {Promise<Object>} returns the deleted user
+ * A user by id
+ * @param {string} id the user id
+ * @returns {Promise<User>} returns the deleted user
  */
 export const deleteUser = async (id: string): Promise<object | boolean> => {
   const forDeletion = DB.users.filter(item => item.id === id)[0];
@@ -49,15 +49,12 @@ export const deleteUser = async (id: string): Promise<object | boolean> => {
 };
 
 /**
- * Finds a user in the database and edits it.
- * @param {String} id the user you want to find
+ * update user
+ * @param {string} id user id
  * @param {Object} edited user
- * @returns {Promise<Object>}  edited user
+ * @returns {Promise<User>}  edited user
  */
-export const updateUser = async (
-  id: string,
-  modifiedUser: IUser
-): Promise<object | boolean> => {
+export const updateUser = async (id: string, modUser: IUser): Promise<object | boolean> => {
   const user = DB.users.filter(item => item.id === id)[0];
 
   if (!user) {
@@ -66,31 +63,32 @@ export const updateUser = async (
 
   DB.users = DB.users.map(item => {
     if (item.id === id) {
-      return modifiedUser;
+      return modUser;
     }
+
     return item;
   });
-  return modifiedUser;
+
+  return modUser;
 };
 
 /**
- * Shows all boards
- * @returns {Promise<Array>} returns a new array containing copies of all boards.
+ * Gets all boards.
+ * @returns {Promise<Board[]>} returns a new array of all boards
  */
-export const getAllBoards = async (): Promise<Array<object>> =>
-  DB.boards.slice(0);
+export const getAllBoards = async (): Promise<Array<object>> => DB.boards.slice(0);
 
 /**
- * Finds a board in the database by ID.
- * @param {String} id the board you want to find
- * @returns {Promise<Object>} if there is such an ID in the database, it returns the board with this ID
+ * get board by id.
+ * @param {string} id the board id
+ * @returns {Promise<Board>} if there is such an id, it returns the board with this id
  */
 export const getBoard = async (id: string): Promise<object | undefined> => DB.boards.filter(item => item.id === id)[0];
 
 /**
- * Adds a new board to the database.
- * @param {Object} new board
- * @returns {Promise<Object>} returns the board who was created
+ * Add a new board.
+ * @param {object} new board
+ * @returns {Promise<Board>} returns the board
  */
 export const createBoard = async (board: IBoard): Promise<object> => {
   DB.boards.push(board);
@@ -98,28 +96,28 @@ export const createBoard = async (board: IBoard): Promise<object> => {
 };
 
 /**
- * A board by ID and removes it from the database.
- * @param {String} id the board you want to find
- * @returns {Promise<Object>} returns the deleted board
+ * remove board
+ * @param {string} id board id
+ * @returns {Promise<Board>} returns the deleted board
  */
 export const deleteBoard = async (id: string): Promise<object | boolean> => {
-  const forDeletion = DB.boards.filter(item => item.id === id)[0];
+  const deletion = DB.boards.filter(item => item.id === id)[0];
 
-  if (!forDeletion) {
+  if (!deletion) {
     return false;
   }
 
-  DB.boards = DB.boards.filter(board => board.id !== forDeletion.id);
-  return forDeletion;
+  DB.boards = DB.boards.filter(board => board.id !== deletion.id);
+  return deletion;
 };
 
 /**
- * Finds a board in the database and edits it.
- * @param {String} id the board you want to find
- * @param {Object} edited board
- * @returns {Promise<Object>} edited board
+ * update board.
+ * @param {string} id the board
+ * @param {Board} edited board
+ * @returns {Promise<Board>} edited board
  */
-export const updateBoard = async (id: string, modifiedBoard: IBoard): Promise<object | boolean> => {
+export const updateBoard = async (id: string, modBoard: IBoard): Promise<object | boolean> => {
   const board = DB.boards.filter(item => item.id === id)[0];
 
   if (!board) {
@@ -128,30 +126,30 @@ export const updateBoard = async (id: string, modifiedBoard: IBoard): Promise<ob
 
   DB.boards = DB.boards.map(item => {
     if (item.id === id) {
-      return modifiedBoard;
+      return modBoard;
     }
     return item;
   });
-  return modifiedBoard;
+  return modBoard;
 };
 
 /**
- * Shows all tasks
- * @returns {Promise<Array>} returns a new array containing copies of all tasks.
+ * Gets all tasks
+ * @returns {Promise<Task[]>} returns a new array of all tasks
  */
 export const getAllTasksByBoard = async (): Promise<Array<object>> => DB.tasks.slice(0);
 
 /**
- * Finds a task in the database by ID.
- * @param {String} id the task you want to find
- * @returns {Promise<Object>}if there is such an ID in the database, it returns the task with this ID
+ * get a task by id.
+ * @param {string} id the task
+ * @returns {Promise<Taks>}if there is such an id, it returns the task with this id
  */
 export const getTask = async (id: string): Promise<object | undefined> => DB.tasks.filter(item => item.id === id)[0];
 
 /**
- * Adds a new task to the database.
- * @param {Object} new task
- * @returns {Promise<Object>} returns the task who was created
+ * Add task.
+ * @param {object} new task
+ * @returns {Promise<Task>} returns the task
  */
 export const createTask = async (task: ITask): Promise<object> => {
   DB.tasks.push(task);
@@ -159,12 +157,12 @@ export const createTask = async (task: ITask): Promise<object> => {
 };
 
 /**
- * Finds a task in the database and edits it.
- * @param {String} id the task you want to find
- * @param {Object} edited task
- * @returns {Promise<Object>} edited task
+ * update a task.
+ * @param {string} id the task id
+ * @param {object} edited task
+ * @returns {Promise<Task>} edited task
  */
-export const updateTask = async (id: string, modifiedTask: ITask): Promise<object | boolean> => {
+export const updateTask = async (id: string, modTask: ITask): Promise<object | boolean> => {
   const task = DB.tasks.filter(item => item.id === id)[0];
 
   if (!task) {
@@ -173,17 +171,19 @@ export const updateTask = async (id: string, modifiedTask: ITask): Promise<objec
 
   DB.tasks = DB.tasks.map(item => {
     if (item.id === id) {
-      return modifiedTask;
+      return modTask;
     }
+
     return item;
   });
-  return modifiedTask;
+
+  return modTask;
 };
 
 /**
- * A task by ID and removes it from the database.
- * @param {String} id the task you want to find
- * @returns {Promise<Object>} returns the deleted task
+ * remove task
+ * @param {string} id the task id
+ * @returns {Promise<Task>} returns the deleted task
  */
 export const deleteTask = async (id: string): Promise<object | boolean> => {
   const forDeletion = DB.tasks.filter(item => item.id === id)[0];
@@ -197,21 +197,22 @@ export const deleteTask = async (id: string): Promise<object | boolean> => {
 };
 
 /**
- * When deleting a user, the function finds all tasks associated with this user and changes the userId to null.
- * @param {String} the user id that is being removed
- * @returns {Promise<Array>}  arroy tasks with modified userId
+ * When deleting a user, the function finds all tasks associated with this user.
+ * @param {string} the user id
+ * @returns {Promise<Task[]>} array tasks
  */
 export const deleteTasksUserId = async (userId: string): Promise<Array<object>> => {
   DB.tasks = DB.tasks.map(item =>
     item.userId === userId ? { ...item, userId: null } : { ...item }
   );
+
   return DB.tasks;
 };
 
 /**
  * When deleting a board, deletes all tasks that were in this board.
- * @param {String} id of the board that is being removed
- * @returns {Promise<Array>} new array instance
+ * @param {string} id board id
+ * @returns {Promise<Board[]>} array boards
  */
 export const deleteTasksByBoard = async (boardId: string): Promise<Array<object>> => {
   DB.tasks = DB.tasks.filter(item => item.boardId !== boardId);
