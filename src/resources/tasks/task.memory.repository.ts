@@ -49,6 +49,7 @@ const deleteById = async (id: string): Promise<ITask | boolean> => {
   if (!task) {
     throw new Error(`The task with id: ${id} has not been found`);
   }
+  
   return task;
 };
 

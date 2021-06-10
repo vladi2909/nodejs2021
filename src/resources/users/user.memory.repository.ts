@@ -26,6 +26,7 @@ const get = async (id: string): Promise<IUser> => {
   if (!user) {
     throw new Error(`The user with id: ${id} was not found`);
   }
+
   return user;
 };
 
@@ -58,7 +59,7 @@ const deleteById = async (id: string): Promise<IUser | boolean> => {
 /**
  * update user.
  * @async
- * @param {String} id the user id
+ * @param {string} id the user id
  * @param {IUser} edited user
  * @return {Promise<User>} edited user
  */

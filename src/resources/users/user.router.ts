@@ -45,7 +45,7 @@ router.route('/:id').delete(async (req: Request<IParamId>, res: Response) => {
 
 router.route('/:id').put(async (req: Request<IParamId>, res: Response) => {
   const modUser = {
-    id: req.params['id'],
+    id: req.params.id,
     name: req.body.name,
     login: req.body.login,
     password: req.body.password,

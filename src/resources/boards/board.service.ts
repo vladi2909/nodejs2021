@@ -12,7 +12,7 @@ const getAll = (): Promise<IBoard[]> => boardsRepo.getAll();
  * Finds a board by id.
  * @async
  * @param {string} id the board id
- * @return {Promise<Board>} returns the board if there is such an id
+ * @return {Promise<Board>} returns the board
  */
 const get = (id: string): Promise<IBoard> => boardsRepo.get(id);
 

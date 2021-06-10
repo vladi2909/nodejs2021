@@ -42,7 +42,7 @@ export class Task {
   /**
    * Task to send
    * @param {Task} object task with key values
-   * @returns {Task} returns a Task object
+   * @returns {Task} returns a task
    */
   static toResponse(task: {
     id: string;

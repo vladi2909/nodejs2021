@@ -19,7 +19,7 @@ const get = (id: string): Promise<ITask> => tasksRepo.get(id);
 /**
  * Add a new task.
  * @async
- * @param {Object} new task
+ * @param {ITask} new task
  * @return {Promise<Task>} returns the task
  */
 const create = (task: ITask): Promise<ITask> => tasksRepo.create(task);
@@ -36,7 +36,7 @@ const deleteById = (id: string): Promise<ITask> => tasksRepo.deleteById(id);
  * remove task.
  * @async
  * @param {string} id the task id
- * @param {Partial<Task>} edited task
+ * @param {ITask} edited task
  * @return {Promise<Task>} edited task
  */
 const update = (id: string, modTask: ITask): Promise<ITask> =>
