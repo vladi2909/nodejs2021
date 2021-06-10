@@ -41,7 +41,7 @@ export class Task {
 
   /**
    * Task to send
-   * @param {Task} object task with key values id, title, order, description, userId, boardId, columnId.
+   * @param {Task} object task with key values
    * @returns {Task} returns a Task object
    */
   static toResponse(task: {
