@@ -1,16 +1,20 @@
 const { v4: uuidv4 } = require('uuid');
 
-/** Class representing a Board. */
+/** Board class*/
 export class Board {
   id: string;
-
   title: string;
-
   columns: { id: string; title: string; order: number }[];
 
   /**
    * Create a board.
-   * @param {Object.<string, string, Array.<Object.<string, string, number>>>} object board with key values id, title, columns. Columns it is an array of column objects. With its key values id, title, order.
+   * @param {object} board 
+   * @param {string} board.id board with key id
+   * @param {string} board.title board with key title
+   * @param {object} columns
+   * @param {string} columns columns with key id
+   * @param {string} columns columns with key title
+   * @param {number} columns columns with key order
    */
   constructor({
     id = uuidv4(),
@@ -29,9 +33,9 @@ export class Board {
   }
 
   /**
-   *
-   * @param {Object}  object board with key values id, title, columns. Columns it is an array of column objects. With its key values id, title, order.
-   * @returns {Object} returns a Board object
+   * Board to send
+   * @param {Board} object board with key values
+   * @returns {Board} returns a Board object
    */
   static toResponse(board: {
     id: string;

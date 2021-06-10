@@ -1,24 +1,25 @@
 const { v4: uuidv4 } = require('uuid');
 
-/** Class representing a Task. */
+/** Task class*/
 export class Task {
   id: string;
-
   title: string;
-
   order: number;
-
   description: string;
-
   userId: string;
-
   boardId: string;
-
   columnId: string;
 
   /**
    * Create a task.
-   * @param {Object.<string, string, number, string, string, string, string>} object task with key values id, title, order, description, userId, boardId, columnId.
+   * @param {object} task
+   * @param {string} task.id task with key id
+   * @param {string} task.title task with key title
+   * @param {number} task.order task with key title
+   * @param {string} task.description task with key description
+   * @param {string} task.userId task with key userId
+   * @param {string} task.boardId task with key boardId
+   * @param {string} task.columnId task with key columnId
    */
   constructor({
     id = uuidv4(),
@@ -39,9 +40,9 @@ export class Task {
   }
 
   /**
-   *
-   * @param {Object}  object task with key values id, title, order, description, userId, boardId, columnId.
-   * @returns {Object} returns a Task object
+   * Task to send
+   * @param {Task} object task with key values id, title, order, description, userId, boardId, columnId.
+   * @returns {Task} returns a Task object
    */
   static toResponse(task: {
     id: string;

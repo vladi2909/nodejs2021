@@ -9,6 +9,7 @@ export class User {
 
   /**
    * Create a user.
+   * @param {object} user
    * @param {string} user.id user with key id
    * @param {string} user.name user with key name
    * @param {string} user.login user with key login
