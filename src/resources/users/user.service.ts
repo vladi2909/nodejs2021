@@ -41,4 +41,4 @@ const deleteById = (id: string): Promise<IUser> => usersRepo.deleteById(id);
  */
 const update = (id: string, modUser: IUser): Promise<IUser> => usersRepo.update(id, modUser);
 
-module.exports = { getAll, get, create, deleteById, update };
+export default { getAll, get, create, deleteById, update };

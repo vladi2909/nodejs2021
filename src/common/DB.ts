@@ -54,11 +54,11 @@ export const deleteUser = async (id: string): Promise<object | boolean> => {
  * @param {Object} edited user
  * @returns {Promise<User>}  edited user
  */
-export const updateUser = async (id: string, modUser: IUser): Promise<object | boolean> => {
+export const updateUser = async (id: string, modUser: IUser): Promise<object | null> => {
   const user = DB.users.filter(item => item.id === id)[0];
 
   if (!user) {
-    return false;
+    return null;
   }
 
   DB.users = DB.users.map(item => {
