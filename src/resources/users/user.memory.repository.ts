@@ -8,23 +8,19 @@ import {
 } from '../../common/DB';
 import { IUser } from '../../models/user.model';
 /**
- * Shows all users
- *
+ * get all users.
  * @async
- * @function getAll
- * @return {Promise<array>} returns a new array containing copies of all users.
+ * @return {Promise<User[]>} returns a new array of all users
  */
-const getAll = async (): Promise<Array<object>> => getAllUsers();
+const getAll = async (): Promise<IUser[]> => getAllUsers();
 
 /**
- * Finds a user in the database by ID. If there is no user with this ID, it returns an error.
- *
+ * get user by id.
  * @async
- * @function get
- * @param {String} id the user you want to find
- * @return {Promise<Object>} returns the user with the specified id
+ * @param {string} id the user
+ * @return {Promise<User>} returns the user id
  */
-const get = async (id: string): Promise<object> => {
+const get = async (id: string): Promise<IUser> => {
   const user = await getUser(id);
 
   if (!user) {
@@ -34,24 +30,20 @@ const get = async (id: string): Promise<object> => {
 };
 
 /**
- * Adds a new user to the database.
- *
+ * Add a new user.
  * @async
- * @function create
- * @param {Object} new user
- * @return {Promise<Object>} returns the user who was created
+ * @param {IUser} new user
+ * @return {Promise<User>} returns the user
  */
-const create = async (user: IUser): Promise<object> => createUser(user);
+const create = async (user: IUser): Promise<IUser> => createUser(user);
 
 /**
- * A user by ID and removes it from the database. And finds all tasks associated with this user and changes the userId to null. If there is no user with this ID, it returns an error.
- *
+ * remove user by id.
  * @async
- * @function deleteById
- * @param {String} id the user you want to find
- * @return {Promise<Object>} returns the deleted user
+ * @param {string} id the user id
+ * @return {Promise<User>} returns the deleted user
  */
-const deleteById = async (id: string): Promise<object | boolean> => {
+const deleteById = async (id: string): Promise<IUser | boolean> => {
   const user = await deleteUser(id);
 
   deleteTasksUserId(id);
@@ -64,23 +56,19 @@ const deleteById = async (id: string): Promise<object | boolean> => {
 };
 
 /**
- * Finds a user in the database and edits it. If there is no user with this ID, it returns an error.
- *
+ * update user.
  * @async
- * @function update
- * @param {String} id the user you want to find
- * @param {Object} edited user
- * @return {Promise<Object>} edited user
+ * @param {String} id the user id
+ * @param {IUser} edited user
+ * @return {Promise<User>} edited user
  */
-const update = async (
-  id: string,
-  modifiedUser: IUser
-): Promise<object | boolean> => {
-  const user = await updateUser(id, modifiedUser);
+const update = async (id: string, modUser: IUser): Promise<IUser | boolean> => {
+  const user = await updateUser(id, modUser);
 
   if (!user) {
     throw new Error(`The user with id: ${id} has not been found`);
   }
+
   return user;
 };
 
