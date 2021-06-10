@@ -7,20 +7,21 @@ import {
   deleteTasksByBoard,
 } from '../../common/DB';
 import { IBoard } from '../../models/board.model';
+import { Board } from './board.model';
 /**
  * gets all boards
  * @async
- * @return {Promise<array>} returns a new array of all boards
+ * @return {Promise<Board[]>} returns a new array of all boards
  */
-const getAll = async (): Promise<Array<object>> => getAllBoards();
+const getAll = async (): Promise<Board[]> => getAllBoards();
 
 /**
  * board by id
  * @async
- * @param {String} id the board
- * @return {Promise<Object>} returns the board
+ * @param {string} id the board
+ * @return {Promise<Board>} returns the board
  */
-const get = async (id: string): Promise<object> => {
+const get = async (id: string): Promise<Board> => {
   const board = await getBoard(id);
 
   if (!board) {
@@ -33,19 +34,18 @@ const get = async (id: string): Promise<object> => {
 /**
  * Add a new board.
  * @async
- * @param {Object} new board
- * @return {Promise<Object>} returns the board
+ * @param {IBoard} new board
+ * @return {Promise<Board>} returns the board
  */
-const create = async (board: IBoard): Promise<object> =>
-  createBoard(board);
+const create = async (board: IBoard): Promise<Board> => createBoard(board);
 
 /**
  * remove board.
  * @async
- * @param {String} id the board you want to find
- * @return {Promise<Object>} returns the deleted board
+ * @param {string} id the board you want to find
+ * @return {Promise<Board>} returns the deleted board
  */
-const deleteById = async (id: string): Promise<object | boolean> => {
+const deleteById = async (id: string): Promise<Board | boolean> => {
   const board = await deleteBoard(id);
 
   deleteTasksByBoard(id);
@@ -53,23 +53,24 @@ const deleteById = async (id: string): Promise<object | boolean> => {
   if (!board) {
     throw new Error(`The board with id: ${id} has not been found`);
   }
+
   return board;
 };
 
 /**
  * update board
  * @async
- * @param {String} id the board you want to find
- * @param {Object} edited board
- * @return {Promise<Object>} edited board
+ * @param {string} id the board you want to find
+ * @param {IBoard} edited board
+ * @return {Promise<Board>} edited board
  */
-const update = async (id: string, modifiedBoard: IBoard): Promise<object | boolean> => {
-  const board = await updateBoard(id, modifiedBoard);
+const update = async (id: string, modBoard: IBoard): Promise<Board | boolean> => {
+  const board = await updateBoard(id, modBoard);
 
   if (!board) {
     throw new Error(`The board with id: ${id} has not been found`);
   }
-  
+
   return board;
 };
 
