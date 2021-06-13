@@ -7,14 +7,14 @@ const logger = winston.createLogger({
       format: winston.format.cli(),
     }),
     new winston.transports.File({
-      filename: './src/logging/logs/errors.log',
+      filename: './logs/errors.log',
       handleExceptions: false,
       level: 'error',
       colorize: true,
       format: winston.format.simple(),
     }),
     new winston.transports.File({
-      filename: './src/logging/logs/info.log',
+      filename: './logs/info.log',
       level: 'info',
       colorize: true,
       format: winston.format.simple(),
@@ -22,7 +22,7 @@ const logger = winston.createLogger({
   ],
   exceptionHandlers: [
     new winston.transports.File({
-      filename: './src/logging/logs/exceptions.log',
+      filename: './logs/exceptions.log',
       format: winston.format.combine(
         winston.format.json(),
         winston.format.colorize()
