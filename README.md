@@ -28,7 +28,7 @@ in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
 For more information about OpenAPI/Swagger please visit https://swagger.io/.
 
 ## Docker
-npm run docker:run  or   docker-compose up
+npm run docker:run
 
 ## JSDoc
 
