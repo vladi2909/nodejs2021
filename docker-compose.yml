@@ -1,10 +1,13 @@
 version: '3'
+
 volumes:
   data:
   logs:
+
 services:
   node:
     build: .
+    container_name: node
     ports:
       - ${PORT}:${PORT}
     depends_on:

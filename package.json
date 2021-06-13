@@ -10,6 +10,7 @@
   "main": "build/server.js",
   "scripts": {
     "start": "ts-node ./src/server.ts",
+    "docker:run": "docker compose down && docker compose up",
     "dev": "nodemon",
     "doc": "jsdoc -c jsdoc.json",
     "build": "tsc -p tsconfig.json",
