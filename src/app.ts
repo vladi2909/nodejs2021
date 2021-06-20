@@ -1,6 +1,6 @@
 import { Errback, Request, Response, NextFunction } from 'express';
+import express from 'express';
 
-const express = require('express');
 const swaggerUI = require('swagger-ui-express');
 const YAML = require('yamljs');
 const path = require('path');
