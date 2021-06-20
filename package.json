@@ -7,7 +7,7 @@
   },
   "type": "commonjs",
   "description": "REST service",
-  "main": "build/server.js",
+  "main": "./build/server.js",
   "scripts": {
     "start": "ts-node ./src/server.ts",
     "docker:run": "docker compose down && docker compose up",
@@ -48,6 +48,7 @@
     "jsdoc": "^3.6.7",
     "morgan": "^1.10.0",
     "pg": "^8.6.0",
+    "sequelize": "^6.6.2",
     "swagger-ui-express": "4.1.6",
     "ts-node": "^10.0.0",
     "typeorm": "^0.2.34",

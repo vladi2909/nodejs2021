@@ -1,10 +1,12 @@
 {
-    "ignoge": [
-      "node_modules"
-    ],
-    "watch": [
-      "./src/server.ts"
-    ],
-    "exec": "npm start",
-    "ext": "ts"
+  "ignore": [
+    "node_modules",
+    "data"
+  ],
+  "watch": [
+    "src"
+  ],
+  "exec": "npm run start",
+  "ext": ".ts,.js",
+  "legacyWatch": true
 }

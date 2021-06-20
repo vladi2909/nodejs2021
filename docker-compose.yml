@@ -1,9 +1,5 @@
 version: '3'
 
-volumes:
-  data:
-  logs:
-
 services:
   node:
     build: .
@@ -16,12 +12,9 @@ services:
       - PORT=${PORT}
     volumes:
       - ./:/usr/app
-      - logs:/usr/app/logs
+      - ./logs:/usr/app/logs
     networks:
       - net
-    deploy:
-      restart_policy:
-        condition: on-failure
     restart: always
   postgres:
     build: ./database
@@ -34,7 +27,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - PGDATA=/var/lib/postgres/data
     volumes:
-      - data:/var/lib/postgres/data
+      - ./data:/var/lib/postgres/data
     networks:
       - net
     restart: always
