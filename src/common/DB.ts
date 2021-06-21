@@ -2,7 +2,7 @@ import { IUser } from '../models/user.model';
 import { IBoard } from '../models/board.model';
 import { ITask } from '../models/task.model';
 import { IDB } from '../models/db.model';
-import { Board } from '../resources/boards/board.model';
+import { Board } from '../entities/board.model';
 
 export const DB: IDB = {
   users: [],

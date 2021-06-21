@@ -7,7 +7,7 @@ import {
   deleteTasksByBoard,
 } from '../../common/DB';
 import { IBoard } from '../../models/board.model';
-import { Board } from './board.model';
+import { Board } from '../../entities/board.model';
 /**
  * gets all boards
  * @async

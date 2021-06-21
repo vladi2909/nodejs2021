@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Board } from './board.model';
+import { Board } from '../../entities/board.model';
 const router = require('express').Router();
 const boardsService = require('./board.service');
 import { IParamId } from '../../models/paramsId.model';

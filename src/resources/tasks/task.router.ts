@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Task } from './task.model';
+import { Task } from '../../entities/task.model';
 const router = require('express').Router();
 const tasksService = require('./task.service');
 import { IParamId } from '../../models/paramsId.model';
