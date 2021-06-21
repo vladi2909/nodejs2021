@@ -1,9 +1,19 @@
 const { v4: uuidv4 } = require('uuid');
 
+import { IBoard } from '../models/board.model';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
 /** Board class*/
-export class Board {
+@Entity()
+class Board implements IBoard {
+
+  @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column()
   title: string;
+
+  @Column({ type: 'json', nullable: true })
   columns: { id: string; title: string; order: number }[];
 
   /**
@@ -46,3 +56,5 @@ export class Board {
     return { id, title, columns };
   }
 }
+
+export default Board;
