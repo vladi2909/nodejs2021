@@ -1,13 +1,32 @@
 const { v4: uuidv4 } = require('uuid');
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ITask } from '../models/task.model';
+import User from './user.model';
+import Board from './board.model';
 
 /** Task class*/
-export class Task {
+@Entity()
+class Task implements ITask {
+
+  @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column()
   title: string;
+
+  @Column()
   order: number;
+
+  @Column()
   description: string;
-  userId: string;
-  boardId: string;
+
+  @Column({ type: 'text', nullable: true })
+  userId: User['id'] | null;
+
+  @Column({ type: 'text' })
+  boardId: Board['id'];
+
+  @Column({ type: 'text', nullable: true })
   columnId: string;
 
   /**
@@ -57,3 +76,5 @@ export class Task {
     return { id, title, order, description, userId, boardId, columnId };
   }
 }
+
+export default Task;
