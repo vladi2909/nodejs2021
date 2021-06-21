@@ -1,12 +1,6 @@
-import * as path from 'path';
-import * as dotenv from 'dotenv';
 import { ConnectionOptions } from 'typeorm';
 
 import { POSTGRES_DB, POSTGRES_HOST, POSTGRES_PASSWORD, POSTGRES_PORT, POSTGRES_USER } from './config';
-
-dotenv.config({
-  path: path.join(__dirname, '../../.env'),
-});
 
 const postgresOptions: ConnectionOptions = {
   type: 'postgres',
@@ -23,7 +17,7 @@ const postgresOptions: ConnectionOptions = {
     entitiesDir: 'src/entity',
     migrationsDir: 'src/migration',
     subscribersDir: 'src/subscriber',
-  },
+  }
 };
 
 export = postgresOptions;

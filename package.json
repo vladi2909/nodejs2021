@@ -16,7 +16,8 @@
     "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
-    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
+    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js --config=src/common/armconfig.ts"
   },
   "keywords": [],
   "license": "ISC",
@@ -47,7 +48,9 @@
     "express": "4.17.1",
     "jsdoc": "^3.6.7",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
     "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
     "sequelize": "^6.6.2",
     "swagger-ui-express": "4.1.6",
     "ts-node": "^10.0.0",
@@ -57,7 +60,7 @@
     "yamljs": "0.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.14.3",
     "@babel/node": "^7.14.2",
     "@babel/preset-env": "^7.14.4",

@@ -6,6 +6,7 @@ const connectToDB = async () => {
   
     try {
       connection = await createConnection(postgresOptions);
+      
       if (!connection.isConnected) {
         await connection.connect();
       }
