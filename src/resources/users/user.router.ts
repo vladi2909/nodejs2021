@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { User } from '../../entities/user.model';
+import User from '../../entities/user.model';
 import express from 'express';
 const router = express.Router();
 import usersService from './user.service';

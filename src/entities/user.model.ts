@@ -1,4 +1,4 @@
-import * as uuid from 'uuid';
+const { v4: uuidv4 } = require('uuid');
 import { IUser } from '../models/user.model';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -26,7 +26,7 @@ export class User implements IUser {
    * @param {string} user.password user with key password
    */
   constructor({
-    id = uuid.v4(),
+    id = uuidv4(),
     name = 'TEST',
     login = 'TEST',
     password = 'TEST',
@@ -47,9 +47,6 @@ export class User implements IUser {
     return { id, name, login };
   }
 
-  static getId(user: { id: string }) {
-    const {id} = user;
-    return {id};
-  }
-
 }
+
+export default User;
