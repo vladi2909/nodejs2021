@@ -42,4 +42,4 @@ const deleteById = (id: string): Promise<ITask> => tasksRepo.deleteById(id);
 const update = (id: string, modTask: ITask): Promise<ITask> =>
   tasksRepo.update(id, modTask);
 
-module.exports = { getAllByBoard, get, create, deleteById, update };
+export  { getAllByBoard, get, create, deleteById, update };

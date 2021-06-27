@@ -1,20 +1,23 @@
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 const { v4: uuidv4 } = require('uuid');
 
-/** User class */
+@Entity('users')
 export class User {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column({length: 100})
   name: string;
+
+  @Column({
+    unique: true,
+    length: 50
+  })
   login: string;
+
+  @Column({length: 20})
   password: string;
 
-  /**
-   * Create a user.
-   * @param {object} user
-   * @param {string} user.id user with key id
-   * @param {string} user.name user with key name
-   * @param {string} user.login user with key login
-   * @param {string} user.password user with key password
-   */
   constructor({
     id = uuidv4(),
     name = 'TEST (User name)',
@@ -36,4 +39,7 @@ export class User {
     const { id, name, login } = user;
     return { id, name, login };
   }
+
 }
+
+export default User;

@@ -1,16 +1,14 @@
-import { Errback, Request, Response, NextFunction } from 'express';
+import express, { Errback, Request, Response, NextFunction } from 'express';
+import path from 'path';
+import * as swaggerUI from 'swagger-ui-express';
+import YAML from 'yamljs';
 
-const express = require('express');
-const swaggerUI = require('swagger-ui-express');
-const YAML = require('yamljs');
-const path = require('path');
-const userRouter = require('./resources/users/user.router');
-const boardRouter = require('./resources/boards/board.router');
-const taskRouter = require('./resources/tasks/task.router');
+import { router as userRouter } from './resources/users/user.router';
+import { router as boardRouter } from './resources/boards/board.router';
+import { router as taskRouter } from './resources/tasks/task.router';
+import morgan from './logging/morganConfig';
 
 const app = express();
-const morgan = require('./logging/morganConfig');
-const logger = require('./logging/logger');
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(express.json());
@@ -22,13 +20,12 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
     res.send('Service is running!');
     return;
   }
+
   next();
 });
 
 app.use('/users', userRouter);
-
 app.use('/boards', boardRouter);
-
 app.use('/boards/:boardId/tasks', taskRouter);
 
 app.use(
@@ -38,14 +35,4 @@ app.use(
   }
 );
 
-process.on('uncaughtException', (error) => {
-  logger.error(`UncaughtException: ${error.message}`);
-  process.exitCode = 1;
-});
-
-process.on('unhandledRejection', (error) => {
-  logger.error(`unhandledRejection: ${error}`);
-  process.exitCode = 1;
-});
-
-module.exports = app;
+export default app;

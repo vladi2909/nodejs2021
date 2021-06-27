@@ -2,7 +2,6 @@ import { IUser } from '../models/user.model';
 import { IBoard } from '../models/board.model';
 import { ITask } from '../models/task.model';
 import { IDB } from '../models/db.model';
-import { Board } from '../resources/boards/board.model';
 
 export const DB: IDB = {
   users: [],
@@ -77,7 +76,7 @@ export const updateUser = async (id: string, modUser: IUser): Promise<IUser | nu
  * Gets all boards.
  * @returns {Promise<Board[]>} returns a new array of all boards
  */
-export const getAllBoards = async (): Promise<Board[]> => DB.boards.slice(0);
+export const getAllBoards = async (): Promise<IBoard[]> => DB.boards.slice(0);
 
 /**
  * get board by id.
@@ -91,7 +90,7 @@ export const getBoard = async (id: string): Promise<IBoard | undefined> => DB.bo
  * @param {object} new board
  * @returns {Promise<Board>} returns the board
  */
-export const createBoard = async (board: IBoard): Promise<Board> => {
+export const createBoard = async (board: IBoard): Promise<IBoard> => {
   DB.boards.push(board);
   return board;
 };
@@ -101,7 +100,7 @@ export const createBoard = async (board: IBoard): Promise<Board> => {
  * @param {string} id board id
  * @returns {Promise<Board>} returns the deleted board
  */
-export const deleteBoard = async (id: string): Promise<Board | null> => {
+export const deleteBoard = async (id: string): Promise<IBoard | null> => {
   const deletion = DB.boards.filter(item => item.id === id)[0];
 
   if (!deletion) {
@@ -118,7 +117,7 @@ export const deleteBoard = async (id: string): Promise<Board | null> => {
  * @param {Board} edited board
  * @returns {Promise<Board>} edited board
  */
-export const updateBoard = async (id: string, modBoard: IBoard): Promise<Board | null> => {
+export const updateBoard = async (id: string, modBoard: IBoard): Promise<IBoard | null> => {
   const board = DB.boards.filter(item => item.id === id)[0];
 
   if (!board) {

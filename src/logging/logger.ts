@@ -48,4 +48,4 @@ process.on('unhandledRejection', (error) => {
   process.exitCode = 1;
 });
 
-module.exports = logger;
+export { logger };

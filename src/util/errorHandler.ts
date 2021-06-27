@@ -1,4 +1,4 @@
-const logger = require('../logger/logger');
+import { logger } from '../logging/logger';
 import { Request, Response, NextFunction } from 'express';
 
 const errorHandler = (
