@@ -14,12 +14,9 @@ const options: ConnectionOptions = {
   username: POSTGRES_USER,
   password: POSTGRES_PASSWORD,
   database: POSTGRES_DB,
-  synchronize: false,
+  synchronize: true,
   logging: false,
-  entities: [
-    'src/migration/**/.ts'
-  ]
-
+  entities: ['src/entities/**/*.ts']
 };
 
 export default options;

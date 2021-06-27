@@ -1,6 +1,5 @@
 const { v4: uuidv4 } = require('uuid');
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-// import { ITask } from '../models/task.model';
 import User from './user.model';
 import Board from './board.model';
 
