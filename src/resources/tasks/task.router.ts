@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import Task from '../../entities/task.model';
-const router = require('express').Router();
+import express from 'express';
 const tasksService = require('./task.service');
 import { IParamId } from '../../models/paramsId.model';
+
+const router = express.Router();
 
 router.route('/').get(async (_req: Request, res: Response) => {
   const tasks = await tasksService.getAllByBoard();
@@ -63,4 +65,4 @@ router.route('/:id').put(async (req: Request<IParamId>, res: Response) => {
   }
 });
 
-module.exports = router;
+export { router };

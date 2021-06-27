@@ -1,35 +1,28 @@
-const { v4: uuidv4 } = require('uuid');
-import { IUser } from '../models/user.model';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+const { v4: uuidv4 } = require('uuid');
 
-/** User class */
-@Entity()
-export class User implements IUser {
+@Entity('users')
+export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({length: 100})
   name: string;
 
-  @Column()
+  @Column({
+    unique: true,
+    length: 50
+  })
   login: string;
 
-  @Column()
+  @Column({length: 20})
   password: string;
 
-  /**
-   * Create a user.
-   * @param {object} user
-   * @param {string} user.id user with key id
-   * @param {string} user.name user with key name
-   * @param {string} user.login user with key login
-   * @param {string} user.password user with key password
-   */
   constructor({
     id = uuidv4(),
-    name = 'TEST',
-    login = 'TEST',
-    password = 'TEST',
+    name = 'TEST (User name)',
+    login = 'TEST (User login)',
+    password = 'TEST (User password)',
   } = {}) {
     this.id = id;
     this.name = name;

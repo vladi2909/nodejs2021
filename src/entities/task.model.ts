@@ -1,12 +1,11 @@
 const { v4: uuidv4 } = require('uuid');
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { ITask } from '../models/task.model';
+// import { ITask } from '../models/task.model';
 import User from './user.model';
 import Board from './board.model';
 
-/** Task class*/
-@Entity()
-class Task implements ITask {
+@Entity('tasks')
+class Task {
 
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -29,17 +28,6 @@ class Task implements ITask {
   @Column({ type: 'text', nullable: true })
   columnId: string;
 
-  /**
-   * Create a task.
-   * @param {object} task
-   * @param {string} task.id task with key id
-   * @param {string} task.title task with key title
-   * @param {number} task.order task with key title
-   * @param {string} task.description task with key description
-   * @param {string} task.userId task with key userId
-   * @param {string} task.boardId task with key boardId
-   * @param {string} task.columnId task with key columnId
-   */
   constructor({
     id = uuidv4(),
     title = 'TEST(Task title)',
@@ -57,7 +45,7 @@ class Task implements ITask {
     this.boardId = boardId;
     this.columnId = columnId;
   }
-
+  
   /**
    * Task to send
    * @param {Task} object task with key values

@@ -1,8 +1,13 @@
 import { ConnectionOptions } from 'typeorm';
+import {
+  POSTGRES_DB,
+  POSTGRES_HOST,
+  POSTGRES_PASSWORD,
+  POSTGRES_PORT,
+  POSTGRES_USER
+} from './config';
 
-import { POSTGRES_DB, POSTGRES_HOST, POSTGRES_PASSWORD, POSTGRES_PORT, POSTGRES_USER } from './config';
-
-const postgresOptions: ConnectionOptions = {
+const options: ConnectionOptions = {
   type: 'postgres',
   host: POSTGRES_HOST || 'localhost',
   port: +POSTGRES_PORT || 5433,
@@ -11,13 +16,10 @@ const postgresOptions: ConnectionOptions = {
   database: POSTGRES_DB,
   synchronize: false,
   logging: false,
-  entities: ['src/entity/**/*.ts'],
-  migrations: ['src/migration/**/*.ts'],
-  cli: {
-    entitiesDir: 'src/entity',
-    migrationsDir: 'src/migration',
-    subscribersDir: 'src/subscriber',
-  }
+  entities: [
+    'src/migration/**/.ts'
+  ]
+
 };
 
-export = postgresOptions;
+export default options;

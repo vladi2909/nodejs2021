@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:vladi2909/nodejs2021.git"
   },
   "type": "commonjs",
   "description": "REST service",
@@ -19,7 +19,15 @@
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js --config=src/common/armconfig.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "rs",
+    "school",
+    "rest",
+    "node",
+    "express",
+    "autotest",
+    "starter"
+  ],
   "license": "ISC",
   "engines": {
     "node": ">=14.0.0 <15"

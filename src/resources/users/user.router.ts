@@ -1,9 +1,10 @@
 import { Request, Response } from 'express';
 import User from '../../entities/user.model';
 import express from 'express';
-const router = express.Router();
 import usersService from './user.service';
 import { IParamId } from '../../models/paramsId.model';
+
+const router = express.Router();
 
 router.route('/').get(async (_req: Request, res: Response) => {
   const users = await usersService.getAll();
@@ -24,7 +25,7 @@ router.route('/').post(async (req: Request, res: Response) => {
     new User({
       name: req.body.name,
       login: req.body.login,
-      password: req.body.password,
+      password: req.body.password
     })
   );
   try {
@@ -59,4 +60,4 @@ router.route('/:id').put(async (req: Request<IParamId>, res: Response) => {
   }
 });
 
-module.exports = router;
+export { router };

@@ -1,9 +1,7 @@
-const { v4: uuidv4 } = require('uuid');
-
-import { IBoard } from '../models/board.model';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+const { v4: uuidv4 } = require('uuid');
+import { IBoard } from '../models/board.model';
 
-/** Board class*/
 @Entity()
 class Board implements IBoard {
 
@@ -16,16 +14,6 @@ class Board implements IBoard {
   @Column({ type: 'json', nullable: true })
   columns: { id: string; title: string; order: number }[];
 
-  /**
-   * Create a board.
-   * @param {object} board 
-   * @param {string} board.id board with key id
-   * @param {string} board.title board with key title
-   * @param {object} columns
-   * @param {string} columns columns with key id
-   * @param {string} columns columns with key title
-   * @param {number} columns columns with key order
-   */
   constructor({
     id = uuidv4(),
     title = 'TEST (Board title)',

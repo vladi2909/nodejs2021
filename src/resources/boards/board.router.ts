@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import Board from '../../entities/board.model';
-const router = require('express').Router();
+import express from 'express';
 const boardsService = require('./board.service');
 import { IParamId } from '../../models/paramsId.model';
+
+const router = express.Router();
 
 router.route('/').get(async (_req: Request, res: Response) => {
   const boards = await boardsService.getAll();
@@ -55,4 +57,4 @@ router.route('/:id').put(async (req: Request<IParamId>, res: Response) => {
   }
 });
 
-module.exports = router;
+export { router };

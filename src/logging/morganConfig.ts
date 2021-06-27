@@ -1,5 +1,5 @@
 const morgan = require('morgan');
-const logger = require('./logger');
+import { logger } from './logger';
 import { Request } from 'express';
 
 morgan.token('query', (req: { query: Request }) => {
@@ -12,7 +12,7 @@ morgan.token('body', (req: { body: Request }) => {
   return `body: ${JSON.stringify(req.body)}`;
 });
 
-module.exports = morgan(
+export default morgan(
   '[:date[web]] :method :url :status :query :params :body - :response-time ms',
   {
     stream: logger.stream,
