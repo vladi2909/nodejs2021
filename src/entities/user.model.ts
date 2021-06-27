@@ -1,22 +1,28 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
 const { v4: uuidv4 } = require('uuid');
+import bcrypt from 'bcrypt';
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({length: 100})
+  @Column({length: 100, nullable: true})
   name: string;
 
   @Column({
-    unique: true,
-    length: 50
+    length: 50,
+    nullable: true
   })
   login: string;
 
-  @Column({length: 20})
+  @Column({length: 100, nullable: true})
   password: string;
+
+  @BeforeInsert()
+  async hashPass(): Promise<void> {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
 
   constructor({
     id = uuidv4(),

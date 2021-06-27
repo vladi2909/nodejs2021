@@ -6,14 +6,16 @@ import YAML from 'yamljs';
 import { router as userRouter } from './resources/users/user.router';
 import { router as boardRouter } from './resources/boards/board.router';
 import { router as taskRouter } from './resources/tasks/task.router';
+import { loginRouter } from './resources/login/login.router';
 import morgan from './logging/morganConfig';
+import { checkTokenIsCorrect } from './middleware/jwt';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(express.json());
 app.use(morgan);
-
+app.use(checkTokenIsCorrect);
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use('/', (req: Request, res: Response, next: NextFunction) => {
   if (req.originalUrl === '/') {
@@ -27,6 +29,7 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
+app.use('/login', loginRouter);
 
 app.use(
   (_err: Errback, _req: Request, res: Response, next: NextFunction): void => {
@@ -34,7 +37,5 @@ app.use(
     next();
   }
 );
-
-console.log('task 8');
 
 export default app;

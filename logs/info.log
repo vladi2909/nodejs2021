@@ -132,3 +132,903 @@ info: [Sun, 06 Jun 2021 19:12:18 GMT] GET /boards/c5e9bef3-3334-4b3f-9642-6a02d7
 
 info: [Sun, 06 Jun 2021 19:12:18 GMT] DELETE /boards/c5e9bef3-3334-4b3f-9642-6a02d790fc93 200 query: {} params: {"id":"c5e9bef3-3334-4b3f-9642-6a02d790fc93"} body: {} - 0.856 ms
 
+info: [Sun, 27 Jun 2021 19:45:24 GMT] GET /users 401 query: {} params: {} body: {} - 10.417 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 1.492 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.823 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.711 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] PUT /users/undefined 401 query: {} params: {} body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.667 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.722 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] DELETE /users/undefined 401 query: {} params: {} body: {} - 0.923 ms
+
+info: [Sun, 27 Jun 2021 19:45:24 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.745 ms
+
+info: [Sun, 27 Jun 2021 19:45:25 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.696 ms
+
+info: [Sun, 27 Jun 2021 19:45:25 GMT] GET /boards 401 query: {} params: {} body: {} - 0.620 ms
+
+info: [Sun, 27 Jun 2021 19:45:25 GMT] GET /boards 401 query: {} params: {} body: {} - 0.635 ms
+
+info: [Sun, 27 Jun 2021 19:45:25 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.619 ms
+
+info: [Sun, 27 Jun 2021 19:45:26 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.641 ms
+
+info: [Sun, 27 Jun 2021 19:45:26 GMT] PUT /boards/undefined 401 query: {} params: {} body: {"message":"Not authorized","title":"Autotest updated board"} - 0.919 ms
+
+info: [Sun, 27 Jun 2021 19:45:26 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.698 ms
+
+info: [Sun, 27 Jun 2021 19:45:26 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.622 ms
+
+info: [Sun, 27 Jun 2021 19:45:26 GMT] DELETE /boards/undefined 401 query: {} params: {} body: {} - 0.767 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.748 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.633 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] GET /boards/undefined/tasks 401 query: {} params: {} body: {} - 1.244 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] GET /boards/undefined/tasks 401 query: {} params: {} body: {} - 0.907 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.886 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.660 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] PUT /boards/undefined/tasks/undefined 401 query: {} params: {} body: {"message":"Not authorized","title":"Autotest updated task"} - 0.613 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] GET /boards/undefined/tasks/undefined 401 query: {} params: {} body: {} - 0.647 ms
+
+info: [Sun, 27 Jun 2021 19:45:27 GMT] DELETE /boards/undefined 401 query: {} params: {} body: {} - 0.615 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 865.152 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 793.595 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 891.167 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 7.684 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.780 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards 200 query: {} params: {} body: {} - 3.720 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 3.689 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /users 200 query: {} params: {} body: {} - 49.226 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks 200 query: {} params: {} body: {} - 14.736 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards 200 query: {} params: {} body: {} - 5.139 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks 200 query: {} params: {} body: {} - 2.230 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/09fd0443-f1cc-4208-80fb-2c33cb172ea3 200 query: {} params: {"id":"09fd0443-f1cc-4208-80fb-2c33cb172ea3"} body: {} - 3.034 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/5165dca3-1fb2-4d63-8395-a6225a73c3f1 200 query: {} params: {"id":"5165dca3-1fb2-4d63-8395-a6225a73c3f1"} body: {} - 2.556 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.265 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 2.814 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] DELETE /boards/51cbb2f0-ac30-45dc-a699-0ffa3ae4b978 200 query: {} params: {"id":"51cbb2f0-ac30-45dc-a699-0ffa3ae4b978"} body: {} - 4.334 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] DELETE /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/b412bd57-a059-4bb4-9f26-c650e104e1b4 200 query: {} params: {"id":"b412bd57-a059-4bb4-9f26-c650e104e1b4"} body: {} - 3.220 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.819 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] POST /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 2.133 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] PUT /boards/d5f169a6-e054-47d4-856e-5a8f4789cdbc 200 query: {} params: {"id":"d5f169a6-e054-47d4-856e-5a8f4789cdbc"} body: {"id":"d5f169a6-e054-47d4-856e-5a8f4789cdbc","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.964 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] PUT /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/be48e351-5393-4259-b33d-c6e718356476 200 query: {} params: {"id":"be48e351-5393-4259-b33d-c6e718356476"} body: {"id":"be48e351-5393-4259-b33d-c6e718356476","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3","columnId":null} - 2.866 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/d5f169a6-e054-47d4-856e-5a8f4789cdbc 200 query: {} params: {"id":"d5f169a6-e054-47d4-856e-5a8f4789cdbc"} body: {} - 2.041 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/be48e351-5393-4259-b33d-c6e718356476 200 query: {} params: {"id":"be48e351-5393-4259-b33d-c6e718356476"} body: {} - 2.223 ms
+
+info: [Sun, 27 Jun 2021 19:45:58 GMT] DELETE /boards/d5f169a6-e054-47d4-856e-5a8f4789cdbc 200 query: {} params: {"id":"d5f169a6-e054-47d4-856e-5a8f4789cdbc"} body: {} - 6.047 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/5165dca3-1fb2-4d63-8395-a6225a73c3f1 200 query: {} params: {"id":"5165dca3-1fb2-4d63-8395-a6225a73c3f1"} body: {} - 1.835 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.745 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] DELETE /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/5165dca3-1fb2-4d63-8395-a6225a73c3f1 200 query: {} params: {"id":"5165dca3-1fb2-4d63-8395-a6225a73c3f1"} body: {} - 1.727 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] DELETE /boards/e8df21f8-1c81-4fd5-8ed1-7cef0d6ae7ac 200 query: {} params: {"id":"e8df21f8-1c81-4fd5-8ed1-7cef0d6ae7ac"} body: {} - 2.111 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3/tasks/5165dca3-1fb2-4d63-8395-a6225a73c3f1 404 query: {} params: {"id":"5165dca3-1fb2-4d63-8395-a6225a73c3f1"} body: {} - 2.556 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/e8df21f8-1c81-4fd5-8ed1-7cef0d6ae7ac 404 query: {} params: {"id":"e8df21f8-1c81-4fd5-8ed1-7cef0d6ae7ac"} body: {} - 2.007 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] DELETE /boards/3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3 200 query: {} params: {"id":"3d7568e4-83f6-4a38-b5e8-1a1f9d0d26d3"} body: {} - 1.938 ms
+
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.285 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"1241386e-b58e-49b8-ae1f-9befbab579e2","userId":null,"columnId":null} - 1.938 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"1241386e-b58e-49b8-ae1f-9befbab579e2","userId":null,"columnId":null} - 2.084 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks 201 query: {} params: {} body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"1241386e-b58e-49b8-ae1f-9befbab579e2","userId":null,"columnId":null} - 2.094 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks 201 query: {} params: {} body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"1241386e-b58e-49b8-ae1f-9befbab579e2","userId":null,"columnId":null} - 5.083 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] POST /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks 201 query: {} params: {} body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"1241386e-b58e-49b8-ae1f-9befbab579e2","userId":null,"columnId":null} - 5.606 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/486d52da-217b-47fd-87ff-bb3d436faa77 200 query: {} params: {"id":"486d52da-217b-47fd-87ff-bb3d436faa77"} body: {} - 1.914 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/35f55837-c8e6-4428-a876-7e07b0632bfb 200 query: {} params: {"id":"35f55837-c8e6-4428-a876-7e07b0632bfb"} body: {} - 1.795 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/04678ed4-f0fa-4520-80fd-873cd94c87a8 200 query: {} params: {"id":"04678ed4-f0fa-4520-80fd-873cd94c87a8"} body: {} - 1.817 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/4d215f24-4a7a-4c6c-8942-4ebf9b822b88 200 query: {} params: {"id":"4d215f24-4a7a-4c6c-8942-4ebf9b822b88"} body: {} - 2.238 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/1ffa4619-9f28-4e8e-bf83-96c0d55f8a2b 200 query: {} params: {"id":"1ffa4619-9f28-4e8e-bf83-96c0d55f8a2b"} body: {} - 2.718 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] DELETE /boards/1241386e-b58e-49b8-ae1f-9befbab579e2 200 query: {} params: {"id":"1241386e-b58e-49b8-ae1f-9befbab579e2"} body: {} - 2.352 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/486d52da-217b-47fd-87ff-bb3d436faa77 404 query: {} params: {"id":"486d52da-217b-47fd-87ff-bb3d436faa77"} body: {} - 2.393 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/35f55837-c8e6-4428-a876-7e07b0632bfb 404 query: {} params: {"id":"35f55837-c8e6-4428-a876-7e07b0632bfb"} body: {} - 1.916 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/04678ed4-f0fa-4520-80fd-873cd94c87a8 404 query: {} params: {"id":"04678ed4-f0fa-4520-80fd-873cd94c87a8"} body: {} - 1.803 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/4d215f24-4a7a-4c6c-8942-4ebf9b822b88 404 query: {} params: {"id":"4d215f24-4a7a-4c6c-8942-4ebf9b822b88"} body: {} - 1.543 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] GET /boards/1241386e-b58e-49b8-ae1f-9befbab579e2/tasks/1ffa4619-9f28-4e8e-bf83-96c0d55f8a2b 404 query: {} params: {"id":"1ffa4619-9f28-4e8e-bf83-96c0d55f8a2b"} body: {} - 1.648 ms
+
+info: [Sun, 27 Jun 2021 19:45:59 GMT] DELETE /boards/09fd0443-f1cc-4208-80fb-2c33cb172ea3 200 query: {} params: {"id":"09fd0443-f1cc-4208-80fb-2c33cb172ea3"} body: {} - 1.367 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] GET /boards/12345/tasks 401 query: {} params: {} body: {} - 1.926 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] GET /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.545 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] POST /boards/12345/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.658 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] PUT /boards/12345/tasks/12345 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.659 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] DELETE /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.724 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] GET /boards 401 query: {} params: {} body: {} - 0.545 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] GET /boards/12345 401 query: {} params: {} body: {} - 0.794 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.822 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] PUT /boards/12345 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.721 ms
+
+info: [Sun, 27 Jun 2021 19:46:00 GMT] DELETE /boards/12345 401 query: {} params: {} body: {} - 0.772 ms
+
+info: [Sun, 27 Jun 2021 19:46:01 GMT] GET /users 401 query: {} params: {} body: {} - 0.606 ms
+
+info: [Sun, 27 Jun 2021 19:46:01 GMT] GET /users/123 401 query: {} params: {} body: {} - 0.665 ms
+
+info: [Sun, 27 Jun 2021 19:46:01 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.604 ms
+
+info: [Sun, 27 Jun 2021 19:46:01 GMT] PUT /users/12345 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.671 ms
+
+info: [Sun, 27 Jun 2021 19:46:01 GMT] DELETE /users/12345 401 query: {} params: {} body: {} - 0.609 ms
+
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+info: [Sun, 27 Jun 2021 19:46:24 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:46:24 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:46:24 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:46:24 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:46:24 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 723.640 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 696.262 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.322 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /users 200 query: {} params: {} body: {} - 5.112 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards 200 query: {} params: {} body: {} - 1.392 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards 200 query: {} params: {} body: {} - 3.002 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/bc742998-d827-4702-a791-24388e7265e4 200 query: {} params: {"id":"bc742998-d827-4702-a791-24388e7265e4"} body: {} - 1.398 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.278 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] DELETE /boards/ff5f8804-e155-4f8c-9d30-a76b0193d06b 200 query: {} params: {"id":"ff5f8804-e155-4f8c-9d30-a76b0193d06b"} body: {} - 2.572 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.298 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] PUT /boards/3041670f-a0b6-491d-8445-0e468644e4d2 200 query: {} params: {"id":"3041670f-a0b6-491d-8445-0e468644e4d2"} body: {"id":"3041670f-a0b6-491d-8445-0e468644e4d2","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.758 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/3041670f-a0b6-491d-8445-0e468644e4d2 200 query: {} params: {"id":"3041670f-a0b6-491d-8445-0e468644e4d2"} body: {} - 2.216 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] DELETE /boards/3041670f-a0b6-491d-8445-0e468644e4d2 200 query: {} params: {"id":"3041670f-a0b6-491d-8445-0e468644e4d2"} body: {} - 1.780 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.613 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] DELETE /boards/6666f6c3-0a70-477d-b5ff-fd985ccc67d7 200 query: {} params: {"id":"6666f6c3-0a70-477d-b5ff-fd985ccc67d7"} body: {} - 1.428 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/6666f6c3-0a70-477d-b5ff-fd985ccc67d7 404 query: {} params: {"id":"6666f6c3-0a70-477d-b5ff-fd985ccc67d7"} body: {} - 2.138 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 503.811 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.425 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.849 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"d2c76293-d192-4466-a255-1825a36f0b94","userId":null,"columnId":null} - 1.598 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"d2c76293-d192-4466-a255-1825a36f0b94","userId":null,"columnId":null} - 1.445 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks 201 query: {} params: {} body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"d2c76293-d192-4466-a255-1825a36f0b94","userId":null,"columnId":null} - 1.602 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks 201 query: {} params: {} body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"d2c76293-d192-4466-a255-1825a36f0b94","userId":null,"columnId":null} - 1.325 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks 201 query: {} params: {} body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"d2c76293-d192-4466-a255-1825a36f0b94","userId":null,"columnId":null} - 1.668 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] POST /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.916 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/8b166f57-906b-4a7e-9b33-77710007f4fc 200 query: {} params: {"id":"8b166f57-906b-4a7e-9b33-77710007f4fc"} body: {} - 2.282 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/a46db2e6-0e33-4c36-8302-eb8e6e3bb829 200 query: {} params: {"id":"a46db2e6-0e33-4c36-8302-eb8e6e3bb829"} body: {} - 4.633 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/18d45987-06e8-477b-b1a0-aca45aee1154 200 query: {} params: {"id":"18d45987-06e8-477b-b1a0-aca45aee1154"} body: {} - 1.767 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/fcb2315f-a59f-445f-a9a0-aba60fb0f6e8 200 query: {} params: {"id":"fcb2315f-a59f-445f-a9a0-aba60fb0f6e8"} body: {} - 1.545 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/1c4d5752-f63d-4812-898f-6b3e4958f0ae 200 query: {} params: {"id":"1c4d5752-f63d-4812-898f-6b3e4958f0ae"} body: {} - 1.692 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks 200 query: {} params: {} body: {} - 1.406 ms
+
+info: [Sun, 27 Jun 2021 19:49:52 GMT] DELETE /boards/d2c76293-d192-4466-a255-1825a36f0b94 200 query: {} params: {"id":"d2c76293-d192-4466-a255-1825a36f0b94"} body: {} - 1.627 ms
+
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+info: [Sun, 27 Jun 2021 19:49:52 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/8b166f57-906b-4a7e-9b33-77710007f4fc 404 query: {} params: {"id":"8b166f57-906b-4a7e-9b33-77710007f4fc"} body: {} - 2.214 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/a46db2e6-0e33-4c36-8302-eb8e6e3bb829 404 query: {} params: {"id":"a46db2e6-0e33-4c36-8302-eb8e6e3bb829"} body: {} - 2.050 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/18d45987-06e8-477b-b1a0-aca45aee1154 404 query: {} params: {"id":"18d45987-06e8-477b-b1a0-aca45aee1154"} body: {} - 2.250 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/fcb2315f-a59f-445f-a9a0-aba60fb0f6e8 404 query: {} params: {"id":"fcb2315f-a59f-445f-a9a0-aba60fb0f6e8"} body: {} - 4.042 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/d2c76293-d192-4466-a255-1825a36f0b94/tasks/1c4d5752-f63d-4812-898f-6b3e4958f0ae 404 query: {} params: {"id":"1c4d5752-f63d-4812-898f-6b3e4958f0ae"} body: {} - 1.938 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks 200 query: {} params: {} body: {} - 2.612 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] DELETE /boards/bc742998-d827-4702-a791-24388e7265e4 200 query: {} params: {"id":"bc742998-d827-4702-a791-24388e7265e4"} body: {} - 2.056 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/ffd7701b-1c2d-4c6e-bc0b-e8eb88020869 200 query: {} params: {"id":"ffd7701b-1c2d-4c6e-bc0b-e8eb88020869"} body: {} - 1.899 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] POST /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.359 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] DELETE /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/96c9b4fe-fcb0-4e29-9067-2c7a70f44b66 200 query: {} params: {"id":"96c9b4fe-fcb0-4e29-9067-2c7a70f44b66"} body: {} - 2.331 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] POST /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.764 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] PUT /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/86b624ac-9903-4f38-a547-2c5f22f2aee2 200 query: {} params: {"id":"86b624ac-9903-4f38-a547-2c5f22f2aee2"} body: {"id":"86b624ac-9903-4f38-a547-2c5f22f2aee2","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"882d4fad-bdc0-4c09-88e5-58b949685393","columnId":null} - 1.761 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/86b624ac-9903-4f38-a547-2c5f22f2aee2 200 query: {} params: {"id":"86b624ac-9903-4f38-a547-2c5f22f2aee2"} body: {} - 2.226 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/ffd7701b-1c2d-4c6e-bc0b-e8eb88020869 200 query: {} params: {"id":"ffd7701b-1c2d-4c6e-bc0b-e8eb88020869"} body: {} - 1.775 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] DELETE /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/ffd7701b-1c2d-4c6e-bc0b-e8eb88020869 200 query: {} params: {"id":"ffd7701b-1c2d-4c6e-bc0b-e8eb88020869"} body: {} - 3.358 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] GET /boards/882d4fad-bdc0-4c09-88e5-58b949685393/tasks/ffd7701b-1c2d-4c6e-bc0b-e8eb88020869 404 query: {} params: {"id":"ffd7701b-1c2d-4c6e-bc0b-e8eb88020869"} body: {} - 1.671 ms
+
+info: [Sun, 27 Jun 2021 19:49:53 GMT] DELETE /boards/882d4fad-bdc0-4c09-88e5-58b949685393 200 query: {} params: {"id":"882d4fad-bdc0-4c09-88e5-58b949685393"} body: {} - 1.557 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] GET /boards 401 query: {} params: {} body: {} - 1.735 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] GET /boards/12345 401 query: {} params: {} body: {} - 1.018 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.763 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] PUT /boards/12345 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.748 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] DELETE /boards/12345 401 query: {} params: {} body: {} - 0.732 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] GET /boards/12345/tasks 401 query: {} params: {} body: {} - 1.669 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] GET /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.787 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] POST /boards/12345/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.059 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] PUT /boards/12345/tasks/12345 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.608 ms
+
+info: [Sun, 27 Jun 2021 19:49:54 GMT] DELETE /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.786 ms
+
+info: [Sun, 27 Jun 2021 19:49:55 GMT] GET /users 401 query: {} params: {} body: {} - 0.695 ms
+
+info: [Sun, 27 Jun 2021 19:49:55 GMT] GET /users/123 401 query: {} params: {} body: {} - 0.739 ms
+
+info: [Sun, 27 Jun 2021 19:49:55 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.688 ms
+
+info: [Sun, 27 Jun 2021 19:49:55 GMT] PUT /users/12345 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.833 ms
+
+info: [Sun, 27 Jun 2021 19:49:55 GMT] DELETE /users/12345 401 query: {} params: {} body: {} - 0.746 ms
+
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+error: unhandledRejection: QueryFailedError: duplicate key value violates unique constraint "UQ_2d443082eccd5198f95f2a36e2c"
+info: [Sun, 27 Jun 2021 19:50:18 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:50:18 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:50:18 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:50:18 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:50:18 GMT] POST /users - query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - - ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] GET /users 401 query: {} params: {} body: {} - 11.343 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 1.049 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 1.492 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.753 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] PUT /users/undefined 401 query: {} params: {} body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.806 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.847 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] DELETE /users/undefined 401 query: {} params: {} body: {} - 1.197 ms
+
+info: [Sun, 27 Jun 2021 19:55:31 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.825 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.017 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.872 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] GET /boards/undefined/tasks 401 query: {} params: {} body: {} - 0.915 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] GET /boards/undefined/tasks 401 query: {} params: {} body: {} - 0.807 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.973 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] POST /boards/undefined/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.775 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] PUT /boards/undefined/tasks/undefined 401 query: {} params: {} body: {"message":"Not authorized","title":"Autotest updated task"} - 0.816 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] GET /boards/undefined/tasks/undefined 401 query: {} params: {} body: {} - 1.694 ms
+
+info: [Sun, 27 Jun 2021 19:55:32 GMT] DELETE /boards/undefined 401 query: {} params: {} body: {} - 4.118 ms
+
+info: [Sun, 27 Jun 2021 19:55:33 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.716 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] GET /boards 401 query: {} params: {} body: {} - 0.820 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] GET /boards 401 query: {} params: {} body: {} - 0.628 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.681 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.830 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] PUT /boards/undefined 401 query: {} params: {} body: {"message":"Not authorized","title":"Autotest updated board"} - 0.891 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.041 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.676 ms
+
+info: [Sun, 27 Jun 2021 19:55:34 GMT] DELETE /boards/undefined 401 query: {} params: {} body: {} - 0.800 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 1373.805 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 1262.924 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 5.421 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /users 200 query: {} params: {} body: {} - 8.136 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards 200 query: {} params: {} body: {} - 2.112 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards 200 query: {} params: {} body: {} - 2.097 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/f192efcc-a10a-4131-937b-817d3ecf984b 200 query: {} params: {"id":"f192efcc-a10a-4131-937b-817d3ecf984b"} body: {} - 2.967 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.464 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/73ac0445-ffdd-448a-9706-f1681b923eb0 200 query: {} params: {"id":"73ac0445-ffdd-448a-9706-f1681b923eb0"} body: {} - 3.060 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.776 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] PUT /boards/2f6ad7a1-cbca-453e-9794-5df309f1baca 200 query: {} params: {"id":"2f6ad7a1-cbca-453e-9794-5df309f1baca"} body: {"id":"2f6ad7a1-cbca-453e-9794-5df309f1baca","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 4.708 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/2f6ad7a1-cbca-453e-9794-5df309f1baca 200 query: {} params: {"id":"2f6ad7a1-cbca-453e-9794-5df309f1baca"} body: {} - 1.676 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/2f6ad7a1-cbca-453e-9794-5df309f1baca 200 query: {} params: {"id":"2f6ad7a1-cbca-453e-9794-5df309f1baca"} body: {} - 1.958 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.930 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/5cc1c4a9-1354-4dc6-8f52-b16b5fa59b76 200 query: {} params: {"id":"5cc1c4a9-1354-4dc6-8f52-b16b5fa59b76"} body: {} - 1.520 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/5cc1c4a9-1354-4dc6-8f52-b16b5fa59b76 404 query: {} params: {"id":"5cc1c4a9-1354-4dc6-8f52-b16b5fa59b76"} body: {} - 1.984 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.186 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 657.233 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"dc35606b-559e-4fbd-b9d3-f994f24b767f","userId":null,"columnId":null} - 2.787 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"dc35606b-559e-4fbd-b9d3-f994f24b767f","userId":null,"columnId":null} - 1.494 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks 201 query: {} params: {} body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"dc35606b-559e-4fbd-b9d3-f994f24b767f","userId":null,"columnId":null} - 1.465 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks 201 query: {} params: {} body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"dc35606b-559e-4fbd-b9d3-f994f24b767f","userId":null,"columnId":null} - 1.882 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks 201 query: {} params: {} body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"dc35606b-559e-4fbd-b9d3-f994f24b767f","userId":null,"columnId":null} - 1.579 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 4.156 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/680dbf0f-c9ce-4b91-889c-212df3674934 200 query: {} params: {"id":"680dbf0f-c9ce-4b91-889c-212df3674934"} body: {} - 2.956 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/130b32c3-4374-451d-995f-fa0ab961f205 200 query: {} params: {"id":"130b32c3-4374-451d-995f-fa0ab961f205"} body: {} - 3.073 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/c209bce6-8294-431b-b180-bd419873aa75 200 query: {} params: {"id":"c209bce6-8294-431b-b180-bd419873aa75"} body: {} - 1.818 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/1046dbd2-0fd7-4005-8e45-0946ed057e8d 200 query: {} params: {"id":"1046dbd2-0fd7-4005-8e45-0946ed057e8d"} body: {} - 2.607 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/4396f547-c837-4a0e-a53e-eebbd83f3934 200 query: {} params: {"id":"4396f547-c837-4a0e-a53e-eebbd83f3934"} body: {} - 2.299 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.999 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 329.349 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f 200 query: {} params: {"id":"dc35606b-559e-4fbd-b9d3-f994f24b767f"} body: {} - 3.679 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks 200 query: {} params: {} body: {} - 3.121 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /users/723d79ab-cda9-4980-ba88-92c834734b3c 200 query: {} params: {"id":"723d79ab-cda9-4980-ba88-92c834734b3c"} body: {} - 18.468 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/680dbf0f-c9ce-4b91-889c-212df3674934 404 query: {} params: {"id":"680dbf0f-c9ce-4b91-889c-212df3674934"} body: {} - 1.916 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/130b32c3-4374-451d-995f-fa0ab961f205 404 query: {} params: {"id":"130b32c3-4374-451d-995f-fa0ab961f205"} body: {} - 1.546 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/c209bce6-8294-431b-b180-bd419873aa75 404 query: {} params: {"id":"c209bce6-8294-431b-b180-bd419873aa75"} body: {} - 4.894 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/1046dbd2-0fd7-4005-8e45-0946ed057e8d 404 query: {} params: {"id":"1046dbd2-0fd7-4005-8e45-0946ed057e8d"} body: {} - 1.966 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/dc35606b-559e-4fbd-b9d3-f994f24b767f/tasks/4396f547-c837-4a0e-a53e-eebbd83f3934 404 query: {} params: {"id":"4396f547-c837-4a0e-a53e-eebbd83f3934"} body: {} - 5.288 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks 200 query: {} params: {} body: {} - 1.824 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/f192efcc-a10a-4131-937b-817d3ecf984b 200 query: {} params: {"id":"f192efcc-a10a-4131-937b-817d3ecf984b"} body: {} - 6.184 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/76e440e1-e5d3-4682-9267-9acded6e7c9b 200 query: {} params: {"id":"76e440e1-e5d3-4682-9267-9acded6e7c9b"} body: {} - 1.420 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.206 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /users/723d79ab-cda9-4980-ba88-92c834734b3c 200 query: {} params: {"id":"723d79ab-cda9-4980-ba88-92c834734b3c"} body: {} - 104.384 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] DELETE /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/487d0737-95a2-43c9-9341-1289fa4886e2 200 query: {} params: {"id":"487d0737-95a2-43c9-9341-1289fa4886e2"} body: {} - 4.878 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] POST /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.543 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] PUT /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/967995f6-5ea2-49a0-b13d-1ce5d825dad1 200 query: {} params: {"id":"967995f6-5ea2-49a0-b13d-1ce5d825dad1"} body: {"id":"967995f6-5ea2-49a0-b13d-1ce5d825dad1","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"480cd14f-e973-45f4-8e06-dfaaa990439d","columnId":null} - 3.342 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/967995f6-5ea2-49a0-b13d-1ce5d825dad1 200 query: {} params: {"id":"967995f6-5ea2-49a0-b13d-1ce5d825dad1"} body: {} - 1.350 ms
+
+info: [Sun, 27 Jun 2021 19:56:20 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/76e440e1-e5d3-4682-9267-9acded6e7c9b 200 query: {} params: {"id":"76e440e1-e5d3-4682-9267-9acded6e7c9b"} body: {} - 2.440 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/76e440e1-e5d3-4682-9267-9acded6e7c9b 200 query: {} params: {"id":"76e440e1-e5d3-4682-9267-9acded6e7c9b"} body: {} - 5.304 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] GET /boards/480cd14f-e973-45f4-8e06-dfaaa990439d/tasks/76e440e1-e5d3-4682-9267-9acded6e7c9b 404 query: {} params: {"id":"76e440e1-e5d3-4682-9267-9acded6e7c9b"} body: {} - 1.738 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /boards/480cd14f-e973-45f4-8e06-dfaaa990439d 200 query: {} params: {"id":"480cd14f-e973-45f4-8e06-dfaaa990439d"} body: {} - 1.619 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 230.592 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /users/8cefb331-ae5f-4b67-ad8f-f7b9e0c9db5b 200 query: {} params: {"id":"8cefb331-ae5f-4b67-ad8f-f7b9e0c9db5b"} body: {} - 19.728 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 148.288 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] PUT /users/d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75 200 query: {} params: {"id":"d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75"} body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75"} - 25.570 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] GET /users/d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75 200 query: {} params: {"id":"d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75"} body: {} - 5.329 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /users/d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75 200 query: {} params: {"id":"d8a8e139-c7e5-4ce4-9c21-c9ff8c368f75"} body: {} - 18.062 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 200.496 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /users/aea60f62-1e54-48b3-916a-dc17fc2e0330 200 query: {} params: {"id":"aea60f62-1e54-48b3-916a-dc17fc2e0330"} body: {} - 16.735 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 177.866 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.340 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"f068a307-3d74-4b2e-ae28-361c20d8d788","boardId":"eea1e51f-163b-477f-808a-07e3804dc44e"} - 1.570 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] POST /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"f068a307-3d74-4b2e-ae28-361c20d8d788","boardId":"eea1e51f-163b-477f-808a-07e3804dc44e"} - 1.404 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /users/f068a307-3d74-4b2e-ae28-361c20d8d788 200 query: {} params: {"id":"f068a307-3d74-4b2e-ae28-361c20d8d788"} body: {} - 16.407 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] GET /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks/b68467c8-8dc5-4bc2-a474-e5e7f5d589e7 200 query: {} params: {"id":"b68467c8-8dc5-4bc2-a474-e5e7f5d589e7"} body: {} - 1.642 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] GET /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks/bb525c6b-c422-4bd5-a193-53a1ab273169 200 query: {} params: {"id":"bb525c6b-c422-4bd5-a193-53a1ab273169"} body: {} - 1.837 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks/b68467c8-8dc5-4bc2-a474-e5e7f5d589e7 200 query: {} params: {"id":"b68467c8-8dc5-4bc2-a474-e5e7f5d589e7"} body: {} - 1.636 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /boards/eea1e51f-163b-477f-808a-07e3804dc44e/tasks/bb525c6b-c422-4bd5-a193-53a1ab273169 200 query: {} params: {"id":"bb525c6b-c422-4bd5-a193-53a1ab273169"} body: {} - 1.739 ms
+
+info: [Sun, 27 Jun 2021 19:56:21 GMT] DELETE /boards/eea1e51f-163b-477f-808a-07e3804dc44e 200 query: {} params: {"id":"eea1e51f-163b-477f-808a-07e3804dc44e"} body: {} - 1.613 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] GET /boards/12345/tasks 401 query: {} params: {} body: {} - 0.832 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] GET /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 1.030 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] POST /boards/12345/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.727 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] PUT /boards/12345/tasks/12345 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.804 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] DELETE /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.693 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] GET /boards 401 query: {} params: {} body: {} - 0.851 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] GET /boards/12345 401 query: {} params: {} body: {} - 0.608 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.988 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] PUT /boards/12345 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.545 ms
+
+info: [Sun, 27 Jun 2021 19:56:22 GMT] DELETE /boards/12345 401 query: {} params: {} body: {} - 0.904 ms
+
+info: [Sun, 27 Jun 2021 19:56:23 GMT] GET /users 401 query: {} params: {} body: {} - 0.651 ms
+
+info: [Sun, 27 Jun 2021 19:56:23 GMT] GET /users/123 401 query: {} params: {} body: {} - 0.608 ms
+
+info: [Sun, 27 Jun 2021 19:56:23 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.743 ms
+
+info: [Sun, 27 Jun 2021 19:56:23 GMT] PUT /users/12345 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.902 ms
+
+info: [Sun, 27 Jun 2021 19:56:23 GMT] DELETE /users/12345 401 query: {} params: {} body: {} - 0.802 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 823.100 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 782.009 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 791.916 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 3.034 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.062 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /users 200 query: {} params: {} body: {} - 27.052 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 4.595 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards 200 query: {} params: {} body: {} - 4.009 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks 200 query: {} params: {} body: {} - 2.627 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards 200 query: {} params: {} body: {} - 2.314 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks 200 query: {} params: {} body: {} - 3.138 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/a69384ae-2f2d-4e3b-9ca7-590769d084de 200 query: {} params: {"id":"a69384ae-2f2d-4e3b-9ca7-590769d084de"} body: {} - 4.004 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2 200 query: {} params: {"id":"5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2"} body: {} - 4.069 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 5.853 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 2.783 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/fb634338-6b00-46f5-83b6-c8b540e9a3e2 200 query: {} params: {"id":"fb634338-6b00-46f5-83b6-c8b540e9a3e2"} body: {} - 5.409 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/14f68af8-13d4-4c09-86d4-c965f72824a6 200 query: {} params: {"id":"14f68af8-13d4-4c09-86d4-c965f72824a6"} body: {} - 3.129 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.278 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.412 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] PUT /boards/492a9133-374d-4701-a43c-c4918e9ab822 200 query: {} params: {"id":"492a9133-374d-4701-a43c-c4918e9ab822"} body: {"id":"492a9133-374d-4701-a43c-c4918e9ab822","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.078 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] PUT /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/c365126d-ffbc-4874-85b7-30e494f3c98b 200 query: {} params: {"id":"c365126d-ffbc-4874-85b7-30e494f3c98b"} body: {"id":"c365126d-ffbc-4874-85b7-30e494f3c98b","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"bc9ad8f5-9093-4abc-861a-d78d41efb562","columnId":null} - 2.281 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/492a9133-374d-4701-a43c-c4918e9ab822 200 query: {} params: {"id":"492a9133-374d-4701-a43c-c4918e9ab822"} body: {} - 1.867 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/c365126d-ffbc-4874-85b7-30e494f3c98b 200 query: {} params: {"id":"c365126d-ffbc-4874-85b7-30e494f3c98b"} body: {} - 1.537 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/492a9133-374d-4701-a43c-c4918e9ab822 200 query: {} params: {"id":"492a9133-374d-4701-a43c-c4918e9ab822"} body: {} - 1.672 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2 200 query: {} params: {"id":"5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2"} body: {} - 2.353 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 266.779 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.216 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2 200 query: {} params: {"id":"5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2"} body: {} - 2.010 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/88071773-f1c3-45a9-a400-c90370a6933e 200 query: {} params: {"id":"88071773-f1c3-45a9-a400-c90370a6933e"} body: {} - 1.578 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /users/630f0c1c-499b-4257-8502-e5bb99758ff0 200 query: {} params: {"id":"630f0c1c-499b-4257-8502-e5bb99758ff0"} body: {} - 13.986 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562/tasks/5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2 404 query: {} params: {"id":"5ab5cbb0-0416-433a-88ed-17d9eb5cc9e2"} body: {} - 2.171 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] GET /boards/88071773-f1c3-45a9-a400-c90370a6933e 404 query: {} params: {"id":"88071773-f1c3-45a9-a400-c90370a6933e"} body: {} - 2.136 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] DELETE /boards/bc9ad8f5-9093-4abc-861a-d78d41efb562 200 query: {} params: {"id":"bc9ad8f5-9093-4abc-861a-d78d41efb562"} body: {} - 1.426 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.267 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"63e386af-76f1-43fa-8e1e-38fe293f783d","userId":null,"columnId":null} - 1.400 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"63e386af-76f1-43fa-8e1e-38fe293f783d","userId":null,"columnId":null} - 1.954 ms
+
+info: [Sun, 27 Jun 2021 19:58:14 GMT] POST /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks 201 query: {} params: {} body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"63e386af-76f1-43fa-8e1e-38fe293f783d","userId":null,"columnId":null} - 2.018 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks 201 query: {} params: {} body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"63e386af-76f1-43fa-8e1e-38fe293f783d","userId":null,"columnId":null} - 1.667 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks 201 query: {} params: {} body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"63e386af-76f1-43fa-8e1e-38fe293f783d","userId":null,"columnId":null} - 8.579 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /users/630f0c1c-499b-4257-8502-e5bb99758ff0 200 query: {} params: {"id":"630f0c1c-499b-4257-8502-e5bb99758ff0"} body: {} - 110.749 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/db585ec2-2460-49cb-bafe-8297ca49fd48 200 query: {} params: {"id":"db585ec2-2460-49cb-bafe-8297ca49fd48"} body: {} - 2.350 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/a01d464e-029e-475a-92d6-5bb94703abdc 200 query: {} params: {"id":"a01d464e-029e-475a-92d6-5bb94703abdc"} body: {} - 2.770 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/e3647f51-f4f3-468f-a5f2-495e435f12ad 200 query: {} params: {"id":"e3647f51-f4f3-468f-a5f2-495e435f12ad"} body: {} - 1.815 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/6a68b189-0319-4773-823c-9eec4cd968a4 200 query: {} params: {"id":"6a68b189-0319-4773-823c-9eec4cd968a4"} body: {} - 4.208 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/e5fd0d4d-c387-48da-8714-95b308e2c16b 200 query: {} params: {"id":"e5fd0d4d-c387-48da-8714-95b308e2c16b"} body: {} - 2.202 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /boards/63e386af-76f1-43fa-8e1e-38fe293f783d 200 query: {} params: {"id":"63e386af-76f1-43fa-8e1e-38fe293f783d"} body: {} - 1.628 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/db585ec2-2460-49cb-bafe-8297ca49fd48 404 query: {} params: {"id":"db585ec2-2460-49cb-bafe-8297ca49fd48"} body: {} - 1.638 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/a01d464e-029e-475a-92d6-5bb94703abdc 404 query: {} params: {"id":"a01d464e-029e-475a-92d6-5bb94703abdc"} body: {} - 1.663 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/e3647f51-f4f3-468f-a5f2-495e435f12ad 404 query: {} params: {"id":"e3647f51-f4f3-468f-a5f2-495e435f12ad"} body: {} - 1.682 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/6a68b189-0319-4773-823c-9eec4cd968a4 404 query: {} params: {"id":"6a68b189-0319-4773-823c-9eec4cd968a4"} body: {} - 1.863 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/63e386af-76f1-43fa-8e1e-38fe293f783d/tasks/e5fd0d4d-c387-48da-8714-95b308e2c16b 404 query: {} params: {"id":"e5fd0d4d-c387-48da-8714-95b308e2c16b"} body: {} - 4.248 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /boards/a69384ae-2f2d-4e3b-9ca7-590769d084de 200 query: {} params: {"id":"a69384ae-2f2d-4e3b-9ca7-590769d084de"} body: {} - 1.609 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 267.762 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /users/7103eaa1-880d-440c-b9e1-94543dcbca65 200 query: {} params: {"id":"7103eaa1-880d-440c-b9e1-94543dcbca65"} body: {} - 16.312 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 137.347 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] PUT /users/92b51399-1228-4d42-91c5-6adb8c4eecf9 200 query: {} params: {"id":"92b51399-1228-4d42-91c5-6adb8c4eecf9"} body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"92b51399-1228-4d42-91c5-6adb8c4eecf9"} - 21.929 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /users/92b51399-1228-4d42-91c5-6adb8c4eecf9 200 query: {} params: {"id":"92b51399-1228-4d42-91c5-6adb8c4eecf9"} body: {} - 5.764 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /users/92b51399-1228-4d42-91c5-6adb8c4eecf9 200 query: {} params: {"id":"92b51399-1228-4d42-91c5-6adb8c4eecf9"} body: {} - 18.964 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 128.326 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /users/68aef7c1-32f4-495b-bf54-fd689bc17e7c 200 query: {} params: {"id":"68aef7c1-32f4-495b-bf54-fd689bc17e7c"} body: {} - 15.089 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 135.959 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.565 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"35ae1105-e436-4246-bd9f-aa573b3ab7c2","boardId":"d794d277-ace2-4844-8dc8-f81f0c46b026"} - 1.774 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] POST /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"35ae1105-e436-4246-bd9f-aa573b3ab7c2","boardId":"d794d277-ace2-4844-8dc8-f81f0c46b026"} - 1.492 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /users/35ae1105-e436-4246-bd9f-aa573b3ab7c2 200 query: {} params: {"id":"35ae1105-e436-4246-bd9f-aa573b3ab7c2"} body: {} - 15.635 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks/38f489a8-3b40-45f2-92ae-e348f3baf0ef 200 query: {} params: {"id":"38f489a8-3b40-45f2-92ae-e348f3baf0ef"} body: {} - 1.734 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] GET /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks/86e5d8d1-d3d9-4ca1-85b4-d6cc787ba832 200 query: {} params: {"id":"86e5d8d1-d3d9-4ca1-85b4-d6cc787ba832"} body: {} - 1.701 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks/38f489a8-3b40-45f2-92ae-e348f3baf0ef 200 query: {} params: {"id":"38f489a8-3b40-45f2-92ae-e348f3baf0ef"} body: {} - 1.671 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /boards/d794d277-ace2-4844-8dc8-f81f0c46b026/tasks/86e5d8d1-d3d9-4ca1-85b4-d6cc787ba832 200 query: {} params: {"id":"86e5d8d1-d3d9-4ca1-85b4-d6cc787ba832"} body: {} - 1.670 ms
+
+info: [Sun, 27 Jun 2021 19:58:15 GMT] DELETE /boards/d794d277-ace2-4844-8dc8-f81f0c46b026 200 query: {} params: {"id":"d794d277-ace2-4844-8dc8-f81f0c46b026"} body: {} - 1.653 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] GET /boards/12345/tasks 401 query: {} params: {} body: {} - 0.717 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] GET /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.701 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] POST /boards/12345/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.747 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] PUT /boards/12345/tasks/12345 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.671 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] DELETE /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 0.634 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] GET /boards 401 query: {} params: {} body: {} - 0.565 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] GET /boards/12345 401 query: {} params: {} body: {} - 0.705 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.551 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] PUT /boards/12345 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.708 ms
+
+info: [Sun, 27 Jun 2021 19:58:16 GMT] DELETE /boards/12345 401 query: {} params: {} body: {} - 0.714 ms
+
+info: [Sun, 27 Jun 2021 19:58:17 GMT] GET /users 401 query: {} params: {} body: {} - 0.648 ms
+
+info: [Sun, 27 Jun 2021 19:58:17 GMT] GET /users/123 401 query: {} params: {} body: {} - 0.661 ms
+
+info: [Sun, 27 Jun 2021 19:58:17 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.652 ms
+
+info: [Sun, 27 Jun 2021 19:58:17 GMT] PUT /users/12345 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.749 ms
+
+info: [Sun, 27 Jun 2021 19:58:17 GMT] DELETE /users/12345 401 query: {} params: {} body: {} - 0.738 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 999.235 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 758.362 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /login 200 query: {} params: {} body: {"login":"admin","password":"admin"} - 1000.628 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 6.206 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 3.510 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] POST /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 5.390 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] GET /boards 200 query: {} params: {} body: {} - 2.890 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] GET /users 200 query: {} params: {} body: {} - 50.426 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks 200 query: {} params: {} body: {} - 11.046 ms
+
+info: [Sun, 27 Jun 2021 20:07:53 GMT] GET /boards 200 query: {} params: {} body: {} - 21.643 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks 200 query: {} params: {} body: {} - 2.352 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d894bcdc-25b3-4483-b5be-0805f3a9b4bf 200 query: {} params: {"id":"d894bcdc-25b3-4483-b5be-0805f3a9b4bf"} body: {} - 5.048 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/83f0ac4d-914c-4d16-ab60-174db0f8b80b 200 query: {} params: {"id":"83f0ac4d-914c-4d16-ab60-174db0f8b80b"} body: {} - 2.971 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 5.059 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.602 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/f82f276c-53b7-4121-b3a1-a164eb997387 200 query: {} params: {"id":"f82f276c-53b7-4121-b3a1-a164eb997387"} body: {} - 2.738 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/67bd0317-ab31-409d-b7af-e2812b6b23ca 200 query: {} params: {"id":"67bd0317-ab31-409d-b7af-e2812b6b23ca"} body: {} - 4.772 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.681 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks 201 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 1.577 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] PUT /boards/b330d1ea-5867-467a-9b4e-fc8faef3cbaa 200 query: {} params: {"id":"b330d1ea-5867-467a-9b4e-fc8faef3cbaa"} body: {"id":"b330d1ea-5867-467a-9b4e-fc8faef3cbaa","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 2.353 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] PUT /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/4f40738a-6cd5-49cf-969c-3969b368ba43 200 query: {} params: {"id":"4f40738a-6cd5-49cf-969c-3969b368ba43"} body: {"id":"4f40738a-6cd5-49cf-969c-3969b368ba43","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"d633d777-ad72-44a8-9bc3-4332712b07a7","columnId":null} - 2.545 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/b330d1ea-5867-467a-9b4e-fc8faef3cbaa 200 query: {} params: {"id":"b330d1ea-5867-467a-9b4e-fc8faef3cbaa"} body: {} - 2.149 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/4f40738a-6cd5-49cf-969c-3969b368ba43 200 query: {} params: {"id":"4f40738a-6cd5-49cf-969c-3969b368ba43"} body: {} - 1.675 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/b330d1ea-5867-467a-9b4e-fc8faef3cbaa 200 query: {} params: {"id":"b330d1ea-5867-467a-9b4e-fc8faef3cbaa"} body: {} - 1.499 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/83f0ac4d-914c-4d16-ab60-174db0f8b80b 200 query: {} params: {"id":"83f0ac4d-914c-4d16-ab60-174db0f8b80b"} body: {} - 1.957 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.280 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/83f0ac4d-914c-4d16-ab60-174db0f8b80b 200 query: {} params: {"id":"83f0ac4d-914c-4d16-ab60-174db0f8b80b"} body: {} - 2.269 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/596ac4e7-e016-46b6-8d84-f387397b8b60 200 query: {} params: {"id":"596ac4e7-e016-46b6-8d84-f387397b8b60"} body: {} - 2.218 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/d633d777-ad72-44a8-9bc3-4332712b07a7/tasks/83f0ac4d-914c-4d16-ab60-174db0f8b80b 404 query: {} params: {"id":"83f0ac4d-914c-4d16-ab60-174db0f8b80b"} body: {} - 2.518 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/596ac4e7-e016-46b6-8d84-f387397b8b60 404 query: {} params: {"id":"596ac4e7-e016-46b6-8d84-f387397b8b60"} body: {} - 1.496 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/d633d777-ad72-44a8-9bc3-4332712b07a7 200 query: {} params: {"id":"d633d777-ad72-44a8-9bc3-4332712b07a7"} body: {} - 1.676 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.311 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 331.081 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"7ca43c7c-24c8-48c9-acd5-ade2854351a8","userId":null,"columnId":null} - 1.496 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"7ca43c7c-24c8-48c9-acd5-ade2854351a8","userId":null,"columnId":null} - 3.201 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks 201 query: {} params: {} body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"7ca43c7c-24c8-48c9-acd5-ade2854351a8","userId":null,"columnId":null} - 4.056 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks 201 query: {} params: {} body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"7ca43c7c-24c8-48c9-acd5-ade2854351a8","userId":null,"columnId":null} - 1.881 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks 201 query: {} params: {} body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"7ca43c7c-24c8-48c9-acd5-ade2854351a8","userId":null,"columnId":null} - 2.113 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /users/acb850b3-9ccd-400b-bfbe-35df78ae4c8e 200 query: {} params: {"id":"acb850b3-9ccd-400b-bfbe-35df78ae4c8e"} body: {} - 76.068 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/af73a2ce-8eb4-4e48-ac8e-49f5539ecb09 200 query: {} params: {"id":"af73a2ce-8eb4-4e48-ac8e-49f5539ecb09"} body: {} - 4.814 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/a0f1ce98-5161-43ff-96a9-3c5b09b97674 200 query: {} params: {"id":"a0f1ce98-5161-43ff-96a9-3c5b09b97674"} body: {} - 2.301 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/86a39e40-23eb-4f43-9591-9459e52c742b 200 query: {} params: {"id":"86a39e40-23eb-4f43-9591-9459e52c742b"} body: {} - 1.627 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/02e099b2-bc74-450b-aa87-60e5404b0eb1 200 query: {} params: {"id":"02e099b2-bc74-450b-aa87-60e5404b0eb1"} body: {} - 1.477 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/45824d12-5f18-46df-9208-4b3e7e15a345 200 query: {} params: {"id":"45824d12-5f18-46df-9208-4b3e7e15a345"} body: {} - 2.920 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8 200 query: {} params: {"id":"7ca43c7c-24c8-48c9-acd5-ade2854351a8"} body: {} - 1.785 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/af73a2ce-8eb4-4e48-ac8e-49f5539ecb09 404 query: {} params: {"id":"af73a2ce-8eb4-4e48-ac8e-49f5539ecb09"} body: {} - 1.538 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/a0f1ce98-5161-43ff-96a9-3c5b09b97674 404 query: {} params: {"id":"a0f1ce98-5161-43ff-96a9-3c5b09b97674"} body: {} - 1.609 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/86a39e40-23eb-4f43-9591-9459e52c742b 404 query: {} params: {"id":"86a39e40-23eb-4f43-9591-9459e52c742b"} body: {} - 2.230 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/02e099b2-bc74-450b-aa87-60e5404b0eb1 404 query: {} params: {"id":"02e099b2-bc74-450b-aa87-60e5404b0eb1"} body: {} - 1.729 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /boards/7ca43c7c-24c8-48c9-acd5-ade2854351a8/tasks/45824d12-5f18-46df-9208-4b3e7e15a345 404 query: {} params: {"id":"45824d12-5f18-46df-9208-4b3e7e15a345"} body: {} - 2.069 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /boards/d894bcdc-25b3-4483-b5be-0805f3a9b4bf 200 query: {} params: {"id":"d894bcdc-25b3-4483-b5be-0805f3a9b4bf"} body: {} - 1.625 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /users/acb850b3-9ccd-400b-bfbe-35df78ae4c8e 200 query: {} params: {"id":"acb850b3-9ccd-400b-bfbe-35df78ae4c8e"} body: {} - 146.560 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 149.874 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] DELETE /users/289ac6a4-24f2-49d2-88b4-e10c9d079d72 200 query: {} params: {"id":"289ac6a4-24f2-49d2-88b4-e10c9d079d72"} body: {} - 15.995 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 129.444 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] PUT /users/8d719f24-eedf-42e3-957a-1d245a165451 200 query: {} params: {"id":"8d719f24-eedf-42e3-957a-1d245a165451"} body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"8d719f24-eedf-42e3-957a-1d245a165451"} - 24.305 ms
+
+info: [Sun, 27 Jun 2021 20:07:54 GMT] GET /users/8d719f24-eedf-42e3-957a-1d245a165451 200 query: {} params: {"id":"8d719f24-eedf-42e3-957a-1d245a165451"} body: {} - 5.409 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /users/8d719f24-eedf-42e3-957a-1d245a165451 200 query: {} params: {"id":"8d719f24-eedf-42e3-957a-1d245a165451"} body: {} - 16.884 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 129.395 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /users/dbd6574f-fdd3-46c5-aa18-8e565a47a4d0 200 query: {} params: {"id":"dbd6574f-fdd3-46c5-aa18-8e565a47a4d0"} body: {} - 15.322 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /users 201 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 138.313 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /boards 201 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 1.662 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks 201 query: {} params: {} body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"f05d4efe-5257-443f-a646-64ed39b6d8bf","boardId":"bd060a45-59fe-42a3-9fb0-9664deaf5539"} - 1.759 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks 201 query: {} params: {} body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"f05d4efe-5257-443f-a646-64ed39b6d8bf","boardId":"bd060a45-59fe-42a3-9fb0-9664deaf5539"} - 1.915 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /users/f05d4efe-5257-443f-a646-64ed39b6d8bf 200 query: {} params: {"id":"f05d4efe-5257-443f-a646-64ed39b6d8bf"} body: {} - 20.191 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks/10dceba5-d93e-4043-ab27-a684bbef018a 200 query: {} params: {"id":"10dceba5-d93e-4043-ab27-a684bbef018a"} body: {} - 2.149 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks/5373afc7-9352-4d8d-ba70-6ffbb53e6708 200 query: {} params: {"id":"5373afc7-9352-4d8d-ba70-6ffbb53e6708"} body: {} - 2.128 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks/5373afc7-9352-4d8d-ba70-6ffbb53e6708 200 query: {} params: {"id":"5373afc7-9352-4d8d-ba70-6ffbb53e6708"} body: {} - 2.264 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539/tasks/10dceba5-d93e-4043-ab27-a684bbef018a 200 query: {} params: {"id":"10dceba5-d93e-4043-ab27-a684bbef018a"} body: {} - 2.035 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /boards/bd060a45-59fe-42a3-9fb0-9664deaf5539 200 query: {} params: {"id":"bd060a45-59fe-42a3-9fb0-9664deaf5539"} body: {} - 1.919 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards/12345/tasks 401 query: {} params: {} body: {} - 0.692 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 1.004 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /boards/12345/tasks 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.796 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] PUT /boards/12345/tasks/12345 401 query: {} params: {} body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null} - 0.632 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /boards/12345/tasks/12345 401 query: {} params: {} body: {} - 1.035 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards 401 query: {} params: {} body: {} - 0.633 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] GET /boards/12345 401 query: {} params: {} body: {} - 0.598 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] POST /boards 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.704 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] PUT /boards/12345 401 query: {} params: {} body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} - 0.615 ms
+
+info: [Sun, 27 Jun 2021 20:07:55 GMT] DELETE /boards/12345 401 query: {} params: {} body: {} - 0.602 ms
+
+info: [Sun, 27 Jun 2021 20:07:56 GMT] GET /users 401 query: {} params: {} body: {} - 0.656 ms
+
+info: [Sun, 27 Jun 2021 20:07:56 GMT] GET /users/123 401 query: {} params: {} body: {} - 0.605 ms
+
+info: [Sun, 27 Jun 2021 20:07:56 GMT] POST /users 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.727 ms
+
+info: [Sun, 27 Jun 2021 20:07:56 GMT] PUT /users/12345 401 query: {} params: {} body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"} - 0.639 ms
+
+info: [Sun, 27 Jun 2021 20:07:56 GMT] DELETE /users/12345 401 query: {} params: {} body: {} - 0.597 ms
+

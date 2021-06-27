@@ -1,5 +1,6 @@
 import options from './armconfig';
 import { createConnection } from 'typeorm';
+import { admin } from '../resources/admin/admin';
 
 const connectToDB = async () => {
     let connection;
@@ -20,6 +21,7 @@ const connectToDB = async () => {
 export const TryDBConnect = async (cb: () => void): Promise<void> => {
   try {
     await connectToDB();
+    await admin();
     cb();
   } catch (err) {
     console.error('DB connection error!', err);
