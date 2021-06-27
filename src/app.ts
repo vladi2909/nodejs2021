@@ -35,4 +35,6 @@ app.use(
   }
 );
 
+console.log('task 8');
+
 export default app;
